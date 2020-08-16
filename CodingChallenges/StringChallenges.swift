@@ -19,4 +19,9 @@ struct StringChallenges {
     func challenge2(input: String) -> Bool {
         return input.lowercased() == String(input.reversed()).lowercased()
     }
+
+    // Challenge 3: Do two strings contain the same characters?
+    func challenge3(input1: String, input2: String) -> Bool {
+        return input1.sorted() == input2.sorted()
+    }
 }
