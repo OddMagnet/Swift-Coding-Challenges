@@ -35,4 +35,9 @@ struct StringChallenges {
     func challenge4(input1: String, input2: String) -> Bool {
         return input1.fuzzyContains(input2)
     }
+
+    // Challenge 5: Count the characters
+    func challenge5(char: Character, input: String) -> Int {
+        return input.filter({ $0 == char }).count
+    }
 }
