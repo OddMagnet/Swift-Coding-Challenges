@@ -37,4 +37,10 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(str.challenge3(input1: "abcc", input2: "abca") == false, "Challenge 3 failed")
     }
 
+    func testChallenge4() {
+        XCTAssert("Hello, world".fuzzyContains("Hello") == true, "Challenge 4 failed")
+        XCTAssert("Hello, world".fuzzyContains("WORLD") == true, "Challenge 4 failed")
+        XCTAssert("Hello, world".fuzzyContains("Goodbye") == false, "Challenge 4 failed")
+    }
+    
 }
