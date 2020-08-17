@@ -58,4 +58,12 @@ struct StringChallenges {
     func challenge6(input: String) -> String {
         return input.asOrderedSet().asJoinedString()
     }
+
+    // Challenge 7: Condense whitespace
+    func challenge7(input: String) -> String {
+        return input.replacingOccurrences(of: " +",                     // regular expression for 1 or more spaces
+                                          with: " ",                    // the string that will be used to replace matches of the regex
+                                          options: .regularExpression,  // enabling the use of regular expressions
+                                          range: nil)                   // go over the whole string
+    }
 }
