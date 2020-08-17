@@ -80,4 +80,25 @@ struct StringChallenges {
         let possibleAlphabet = inputSet.filter({ $0 >= "a" && $0 <= "z" })
         return possibleAlphabet.count == 26
     }
+
+    // Challenge 10: Vowels and consonants
+    // Given a string in English, return a tuple containing the number of vowels and consonants.
+    func challenge10(input: String) -> (vowels: Int, consonants: Int) {
+        // strings to check against
+        let allVowels = "aeiou"
+        let allConsonants = "bcdfghjklmnpqrstvwxyz"
+
+        // counters
+        var vowelCount = 0
+        var consonantCount = 0
+
+        // loop over every letter of the input and check if it's a vowel or consonant
+        let lowercasedInput = input.lowercased()
+        for letter in lowercasedInput {
+            if allVowels.contains(letter) { vowelCount += 1 }
+            else if allConsonants.contains(letter) { consonantCount += 1 }
+        }
+
+        return (vowelCount, consonantCount)
+    }
 }

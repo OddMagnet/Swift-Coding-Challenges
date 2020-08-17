@@ -69,8 +69,13 @@ class CodingChallengesTests: XCTestCase {
     }
 
     func testChallenge9() {
-        XCTAssert(str.challenge9(input: "The quick brown fox jumps over the lazy dog") == true, "Challenge9 failed")
-        XCTAssert(str.challenge9(input: "The quick brown fox jumped over the lazy dog") == false, "Challenge9 failed")
+        XCTAssert(str.challenge9(input: "The quick brown fox jumps over the lazy dog") == true, "Challenge 9 failed")
+        XCTAssert(str.challenge9(input: "The quick brown fox jumped over the lazy dog") == false, "Challenge 9 failed")
+    }
+
+    func testChallenge10() {
+        XCTAssert(str.challenge10(input: "Swift Coding Challenges") == (6, 15), "Challenge 10 failed")
+        XCTAssert(str.challenge10(input: "Mississippi") == (4, 7), "Challenge 10 failed")
     }
     
 }
