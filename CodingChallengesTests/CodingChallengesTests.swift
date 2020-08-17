@@ -48,5 +48,11 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(str.challenge5(char: "i", input: "Mississippi") == 4, "Challenge 5 failed")
         XCTAssert(str.challenge5(char: "i", input: "Hacking with Swift") == 3, "Challenge 5 failed")
     }
+
+    func testChallenge6() {
+        XCTAssert(str.challenge6(input: "wombat") == "wombat", "Challenge 6 failed")
+        XCTAssert(str.challenge6(input: "hello") == "helo", "Challenge 6 failed")
+        XCTAssert(str.challenge6(input: "Mississippi") == "Misp", "Challenge 6 failed")
+    }
     
 }
