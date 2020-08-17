@@ -66,4 +66,11 @@ struct StringChallenges {
                                           options: .regularExpression,  // enabling the use of regular expressions
                                           range: nil)                   // go over the whole string
     }
+
+    // Challenge 8: String is rotated
+    func challenge8(input: String, rotated: String) -> Bool {
+        guard input.count == rotated.count else { return false }
+        let allCombinations = input + input                             // twice the initial string contains all possible rotations
+        return allCombinations.contains(rotated)
+    }
 }

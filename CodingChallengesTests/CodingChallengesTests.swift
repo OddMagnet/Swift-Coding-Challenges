@@ -60,5 +60,12 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(str.challenge7(input: "    a") == " a", "Challenge 7 failed")
         XCTAssert(str.challenge7(input: "abc") == "abc", "Challenge 7 failed")
     }
+
+    func testChallenge8() {
+        XCTAssert(str.challenge8(input: "abcde", rotated: "eabcd") == true, "Challenge 8 failed")
+        XCTAssert(str.challenge8(input: "abcde", rotated: "cdeab") == true, "Challenge 8 failed")
+        XCTAssert(str.challenge8(input: "abcde", rotated: "abced") == false, "Challenge 8 failed")
+        XCTAssert(str.challenge8(input: "abc", rotated: "a") == false, "Challenge 8 failed")
+    }
     
 }
