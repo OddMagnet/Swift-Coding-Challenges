@@ -76,8 +76,8 @@ struct StringChallenges {
 
     // Challenge 9: Find pangrams (a pangram is a string that contains every letter of the alphabet)
     func challenge9(input: String) -> Bool {
-        let noWhiteSpace = input.replacingOccurrences(of: " ", with: "")
-        let possibleAlphabet = Set(noWhiteSpace.lowercased())           // lowercased and put into a Set to remove duplicate characters
+        let inputSet = Set(input.lowercased())                          // lowercased and put into a Set to remove duplicate characters
+        let possibleAlphabet = inputSet.filter({ $0 >= "a" && $0 <= "z" })
         return possibleAlphabet.count == 26
     }
 }
