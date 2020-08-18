@@ -77,5 +77,14 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(str.challenge10(input: "Swift Coding Challenges") == (6, 15), "Challenge 10 failed")
         XCTAssert(str.challenge10(input: "Mississippi") == (4, 7), "Challenge 10 failed")
     }
+
+    func testChallenge11() {
+        XCTAssert(str.challenge11(input1: "Clamp", input2: "Cramp") == true, "Challenge 11 failed")
+        XCTAssert(str.challenge11(input1: "Clamp", input2: "Crams") == true, "Challenge 11 failed")
+        XCTAssert(str.challenge11(input1: "Clamp", input2: "Grams") == true, "Challenge 11 failed")
+        XCTAssert(str.challenge11(input1: "Clamp", input2: "Grans") == false, "Challenge 11 failed")
+        XCTAssert(str.challenge11(input1: "Clamp", input2: "Clam") == false, "Challenge 11 failed")
+        XCTAssert(str.challenge11(input1: "clamp", input2: "maple") == false, "Challenge 11 failed")
+    }
     
 }

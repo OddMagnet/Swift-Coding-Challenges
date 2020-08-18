@@ -101,4 +101,20 @@ struct StringChallenges {
 
         return (vowelCount, consonantCount)
     }
+
+    // Challenge 11: Three different letters
+    func challenge11(input1: String, input2: String) -> Bool {
+        // check length first for early exit
+        guard input1.count == input2.count else { return false }
+
+        // convert both to arrays
+        let array1 = Array(input1)
+        let array2 = Array(input2)
+        var diffCounter = 0
+        for index in 0..<array1.count {
+            if array1[index] != array2[index] { diffCounter += 1 }
+        }
+
+        return diffCounter <= 3
+    }
 }
