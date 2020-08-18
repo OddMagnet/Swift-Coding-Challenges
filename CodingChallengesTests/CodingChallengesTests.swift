@@ -86,5 +86,10 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(str.challenge11(input1: "Clamp", input2: "Clam") == false, "Challenge 11 failed")
         XCTAssert(str.challenge11(input1: "clamp", input2: "maple") == false, "Challenge 11 failed")
     }
+
+    func testChallenge12() {
+        XCTAssert(str.challenge12(input: "swift switch swill swim") == "swi", "Challenge 12 failed")
+        XCTAssert(str.challenge12(input: "flip flap flop") == "fl", "Challenge 12 failed")
+    }
     
 }

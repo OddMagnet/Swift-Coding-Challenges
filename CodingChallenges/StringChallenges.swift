@@ -118,4 +118,28 @@ struct StringChallenges {
 
         return true
     }
+
+    // Challenge 12: Find longest prefix
+    func challenge12(input: String) -> String {
+        let elements = input.components(separatedBy: .whitespaces)
+        guard let firstElement = elements.first else { return "" }
+
+        var current = ""
+        var best = ""
+
+        for letter in firstElement {
+            // add a letter to the current prefix
+            current.append(letter)
+
+            // check if it still works with all others
+            for element in elements {
+                if !element.hasPrefix(current) { return best }
+            }
+
+            // if it worked for all, assign current to best prefix
+            best = current
+        }
+
+        return best
+    }
 }
