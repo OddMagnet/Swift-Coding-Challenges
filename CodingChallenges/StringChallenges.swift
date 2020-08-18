@@ -111,10 +111,11 @@ struct StringChallenges {
         let array1 = Array(input1)
         let array2 = Array(input2)
         var diffCounter = 0
-        for index in 0..<array1.count {
-            if array1[index] != array2[index] { diffCounter += 1 }
+        for (index, element) in array1.enumerated() {
+            if array2[index] != element { diffCounter += 1 }
+            if diffCounter > 3 { return false }
         }
 
-        return diffCounter <= 3
+        return true
     }
 }
