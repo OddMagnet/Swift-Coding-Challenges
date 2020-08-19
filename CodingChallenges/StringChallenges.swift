@@ -209,6 +209,7 @@ struct StringChallenges {
          */
     }
 
+    // Challenge 14: String permutations
     func challenge14(input: String, current: String = "", results: inout [String]) {
         let inputLength = input.count
         let inputArray = Array(input)
@@ -230,4 +231,13 @@ struct StringChallenges {
             }
         }
     }
+
+    // Challenge 15: Reverse the words in a string
+    // Write a function that returns a string with each of its words reversed but in the original order, without using a loop.
+    func challenge15(input: String) -> String {
+        let inputArray = input.components(separatedBy: .whitespaces)
+        let resultArray = inputArray.map({ String($0.reversed()) })
+        return resultArray.joined(separator: " ")
+    }
+
 }

@@ -12,7 +12,7 @@ import XCTest
 class CodingChallengesTests: XCTestCase {
     var str: StringChallenges = StringChallenges()
 
-    // MARK: String Challenges
+    // MARK: String Challenges -
     func testChallenge1() {
         XCTAssert(str.challenge1(input: "No duplicates") == true, "Challenge 1 failed")
         XCTAssert(str.challenge1(input: "abcdefghijklmnopqrstuvwxyz") == true, "Challenge 1 failed")
@@ -115,5 +115,12 @@ class CodingChallengesTests: XCTestCase {
         str.challenge14(input: "wombat", results: &results)
         XCTAssert(results.count == 720, "Challenge 14 failed")
     }
+
+    func testChallenge15() {
+        XCTAssert(str.challenge15(input: "Swift Coding Challenges") == "tfiwS gnidoC segnellahC", "Challenge 15 failed")
+        XCTAssert(str.challenge15(input: "The quick brown fox") == "ehT kciuq nworb xof", "Challenge 15 failed")
+    }
+
+    // MARK: - Number Challenges -
     
 }
