@@ -208,4 +208,26 @@ struct StringChallenges {
          }
          */
     }
+
+    func challenge14(input: String, current: String = "", results: inout [String]) {
+        let inputLength = input.count
+        let inputArray = Array(input)
+
+        if (inputLength == 0) {
+            results.append(current)
+        } else {
+            // for every letter
+            for index in 0 ..< inputLength {
+                // get the letters before the current
+                let previousLetters = String(inputArray[0 ..< index ])
+                // and the ones following the current letter
+                let followingLetters = String(inputArray[index+1 ..< inputLength])
+
+                // then recursively call this function with the remaining letters
+                challenge14(input: previousLetters + followingLetters,
+                            current: current + String(inputArray[index]),
+                            results: &results)
+            }
+        }
+    }
 }

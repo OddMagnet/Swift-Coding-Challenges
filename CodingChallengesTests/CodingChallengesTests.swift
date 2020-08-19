@@ -97,5 +97,23 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(str.challenge13(input: "aaabaaabaaa") == "a3b1a3b1a3", "Challenge 13 failed")
         XCTAssert(str.challenge13(input: "aaAAaa") == "a2A2a2", "Challenge 13 failed")
     }
+
+    func testChallenge14() {
+        var results = [String]()
+        str.challenge14(input: "a", results: &results)
+        XCTAssert(results == ["a"], "Challenge 14 failed")
+
+        results = []
+        str.challenge14(input: "ab", results: &results)
+        XCTAssert(results == ["ab", "ba"], "Challenge 14 failed")
+
+        results = []
+        str.challenge14(input: "abc", results: &results)
+        XCTAssert(results == ["abc", "acb", "bac", "bca", "cab", "cba"], "Challenge 14 failed")
+
+        results = []
+        str.challenge14(input: "wombat", results: &results)
+        XCTAssert(results.count == 720, "Challenge 14 failed")
+    }
     
 }
