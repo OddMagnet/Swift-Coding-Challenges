@@ -91,5 +91,11 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(str.challenge12(input: "swift switch swill swim") == "swi", "Challenge 12 failed")
         XCTAssert(str.challenge12(input: "flip flap flop") == "fl", "Challenge 12 failed")
     }
+
+    func testChallenge13() {
+        XCTAssert(str.challenge13(input: "aabbcc") == "a2b2c2", "Challenge 13 failed")
+        XCTAssert(str.challenge13(input: "aaabaaabaaa") == "a3b1a3b1a3", "Challenge 13 failed")
+        XCTAssert(str.challenge13(input: "aaAAaa") == "a2A2a2", "Challenge 13 failed")
+    }
     
 }

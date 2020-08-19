@@ -142,4 +142,70 @@ struct StringChallenges {
 
         return best
     }
+
+    // Challenge 13: Run-length encoding
+    func challenge13(input: String) -> String {
+        /*
+            INITIAL SOLUTION
+            After reading 'run-length encoding' in the challenge I decided to look it up, put it indo pseudo code and implement it in Swift
+            While this solution works I got curious how well it performs compared to other solutions, sadly this solution does not perform well
+            Further down are two more solutions which both perform notably better, but are not my own, credits for both goes to Paul Hudson
+         */
+        // Reduce the input string into an array of tuples where each tuple has a counter and the letter
+        let tempResult = Array(input).reduce([(letter: Character, counter: Int)]()) { result, current in
+            // check if the current letter is already in the last tuple element, if so increase it's counter
+            if result.last?.letter == current {
+                var temp = result
+                temp[temp.count - 1].counter += 1
+                return temp
+            }
+            // if not, add a new tuple element to the array
+            return result + [(current, 1)]
+        }
+
+        // convert the tuple array to a string again
+        var finalResult = ""
+        for element in tempResult {
+            finalResult += "\(element.letter)\(element.counter)"
+        }
+        return finalResult
+
+        /*
+         ALTERNATIVE SOLUTION 1
+         ----------------------
+         var currentLetter: Character?
+         var returnValue = ""
+         var letterCounter = 0
+         for letter in input {
+            if letter == currentLetter {
+                letterCounter += 1
+            } else {
+                if let current = currentLetter {
+                    returnValue.append("\(current)\(letterCounter)")
+                }
+                currentLetter = letter
+                letterCounter = 1
+            }
+         }
+         if let current = currentLetter {
+            returnValue.append("\(current)\(letterCounter)")
+         }
+         */
+
+        /*
+         ALTERNATIVE SOLUTION 2
+         ----------------------
+         var returnValue = ""
+         var letterCounter = 0
+         let letterArray = Array(input)
+         for i in 0 ..< letterArray.count {
+            letterCounter += 1
+            if i + 1 == letterArray.count
+            || letterArray[i] != letterArray[i + 1] {
+                returnValue += "\(letterArray[i])\(letterCounter)"
+                letterCounter = 0
+            }
+         }
+         */
+    }
 }
