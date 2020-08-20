@@ -37,4 +37,10 @@ struct NumberChallenges {
         }
         return result
     }
+
+    // Challenge 19: Swap two numbers
+    // Swap two positive variable integers, a and b, without using a temporary variable.
+    func challenge19(a: inout Int, b: inout Int) {
+        (a, b) = (b, a)
+    }
 }
