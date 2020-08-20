@@ -22,4 +22,9 @@ struct NumberChallenges {
                 return String(input)
         }
     }
+
+    // Challenge 17: Generate a random number in a range
+    func challenge17(min: Int, max: Int) -> Int {
+        return Int.random(in: min...max)
+    }
 }

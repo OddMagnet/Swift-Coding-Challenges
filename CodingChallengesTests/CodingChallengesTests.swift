@@ -131,4 +131,11 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(num.challenge16(input: 5) == "Buzz", "Challenge 16 failed")
         XCTAssert(num.challenge16(input: 15) == "FizzBuzz", "Challenge 16 failed")
     }
+
+    func testChallenge17() {
+        XCTAssert((1...5).contains(num.challenge17(min: 1, max: 5)), "Challenge 17 failed")
+        XCTAssert((8...10).contains(num.challenge17(min: 8, max: 10)), "Challenge 17 failed")
+        XCTAssert((12...12).contains(num.challenge17(min: 12, max: 12)), "Challenge 17 failed")
+        XCTAssert((12...18).contains(num.challenge17(min: 12, max: 18)), "Challenge 17 failed")
+    }
 }
