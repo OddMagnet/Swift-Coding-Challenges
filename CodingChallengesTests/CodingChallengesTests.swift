@@ -138,4 +138,9 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert((12...12).contains(num.challenge17(min: 12, max: 12)), "Challenge 17 failed")
         XCTAssert((12...18).contains(num.challenge17(min: 12, max: 18)), "Challenge 17 failed")
     }
+
+    func testChallenge18() {
+        XCTAssert(num.challenge18(input: 4, power: 3) == 64, "Challenge 18 failed")
+        XCTAssert(num.challenge18(input: 2, power: 8) == 256, "Challenge 18 failed")
+    }
 }

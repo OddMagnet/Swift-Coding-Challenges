@@ -27,4 +27,14 @@ struct NumberChallenges {
     func challenge17(min: Int, max: Int) -> Int {
         return Int.random(in: min...max)
     }
+
+    // Challenge 18: Recreate the pow() function
+    func challenge18(input: Int, power: Int) -> Int {
+        guard input > 0 && power > 0 else { return 0 }
+        var result = input
+        for _ in 1..<power {
+            result *= input
+        }
+        return result
+    }
 }
