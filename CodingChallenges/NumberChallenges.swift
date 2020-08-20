@@ -43,4 +43,16 @@ struct NumberChallenges {
     func challenge19(a: inout Int, b: inout Int) {
         (a, b) = (b, a)
     }
+
+    // Challenge 20: Number is prime
+    func challenge20(input: Int) -> Bool {
+        guard input >= 2 else { return false }
+        guard input != 2 else { return true }
+
+        let maxDivisor = Int(ceil(sqrt(Double(input))))
+        for divisor in 2...maxDivisor {
+            if input % divisor == 0 { return false }
+        }
+        return true
+    }
 }
