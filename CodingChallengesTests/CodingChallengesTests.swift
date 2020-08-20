@@ -11,6 +11,7 @@ import XCTest
 
 class CodingChallengesTests: XCTestCase {
     var str: StringChallenges = StringChallenges()
+    var num: NumberChallenges = NumberChallenges()
 
     // MARK: String Challenges -
     func testChallenge1() {
@@ -122,5 +123,12 @@ class CodingChallengesTests: XCTestCase {
     }
 
     // MARK: - Number Challenges -
-    
+    func testChallenge16() {
+        XCTAssert(num.challenge16(input: 1) == "1", "Challenge 16 failed")
+        XCTAssert(num.challenge16(input: 2) == "2", "Challenge 16 failed")
+        XCTAssert(num.challenge16(input: 3) == "Fizz", "Challenge 16 failed")
+        XCTAssert(num.challenge16(input: 4) == "4", "Challenge 16 failed")
+        XCTAssert(num.challenge16(input: 5) == "Buzz", "Challenge 16 failed")
+        XCTAssert(num.challenge16(input: 15) == "FizzBuzz", "Challenge 16 failed")
+    }
 }

@@ -14,6 +14,7 @@
 		4C45F0A024E91ACE001AD0F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C45F09E24E91ACE001AD0F9 /* Main.storyboard */; };
 		4C45F0AC24E91ACE001AD0F9 /* CodingChallengesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C45F0AB24E91ACE001AD0F9 /* CodingChallengesTests.swift */; };
 		4C45F0B724E91AEA001AD0F9 /* StringChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C45F0B624E91AEA001AD0F9 /* StringChallenges.swift */; };
+		4C6437DD24EEC3F200012E4D /* NumberChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6437DC24EEC3F200012E4D /* NumberChallenges.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		4C45F0AB24E91ACE001AD0F9 /* CodingChallengesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingChallengesTests.swift; sourceTree = "<group>"; };
 		4C45F0AD24E91ACE001AD0F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C45F0B624E91AEA001AD0F9 /* StringChallenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringChallenges.swift; sourceTree = "<group>"; };
+		4C6437DC24EEC3F200012E4D /* NumberChallenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberChallenges.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				4C45F09524E91ACB001AD0F9 /* AppDelegate.swift */,
 				4C45F09724E91ACB001AD0F9 /* ContentView.swift */,
 				4C45F0B624E91AEA001AD0F9 /* StringChallenges.swift */,
+				4C6437DC24EEC3F200012E4D /* NumberChallenges.swift */,
 				4C45F09924E91ACE001AD0F9 /* Assets.xcassets */,
 				4C45F09E24E91ACE001AD0F9 /* Main.storyboard */,
 				4C45F0A124E91ACE001AD0F9 /* Info.plist */,
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C6437DD24EEC3F200012E4D /* NumberChallenges.swift in Sources */,
 				4C45F09824E91ACB001AD0F9 /* ContentView.swift in Sources */,
 				4C45F09624E91ACB001AD0F9 /* AppDelegate.swift in Sources */,
 				4C45F0B724E91AEA001AD0F9 /* StringChallenges.swift in Sources */,
