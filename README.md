@@ -16,3 +16,17 @@
 13. Run-length encoding
 14. String permutations
 15. Reverse the words in a string
+
+## Number Challenges
+1. Fizz Buzz
+2. Generate a random number in a range
+3. Recreate the pow() function
+4. Swap two numbers
+5. Number is prime
+6. Counting binary ones
+7. Binary reverse
+8. Integer disguised as string
+9. Add numbers inside a string
+10. Calculate a square root by hand
+11. Subtract without subtract
+
