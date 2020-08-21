@@ -104,4 +104,16 @@ struct NumberChallenges {
         }
         return true
     }
+
+    // Challenge 24: Add numbers inside a string
+    func challenge24(input: String) -> Int {
+        // replace all non-digit with the same character
+        let digitsReplaced = input.replacingOccurrences(of: "\\D+", with: "x", options: .regularExpression)
+        // then splitting into an array
+        let numbersArray = digitsReplaced.split(separator: "x")
+        // using the reduce function to both convert the strings to numbers and sum them up
+        return numbersArray.reduce(0, { total, currentNumber in
+            total + Int(String(currentNumber))! // since all non-digits were filtered before, a force unwrap is safe here
+        })
+    }
 }
