@@ -86,4 +86,14 @@ struct NumberChallenges {
 
         return (nextLowest, nextHighest)
     }
+
+    // Challenge 22: Binary reverse
+    func challenge22(input: UInt8) -> Int {
+        let inputAsBinaryString = String(input, radix: 2)
+        let padding = String(repeating: "0", count: 8 - inputAsBinaryString.count)
+        let paddedInput = padding + inputAsBinaryString
+        let reversed = paddedInput.reversed()
+        let outputString = String(reversed)
+        return Int(outputString, radix: 2) ?? 0
+    }
 }

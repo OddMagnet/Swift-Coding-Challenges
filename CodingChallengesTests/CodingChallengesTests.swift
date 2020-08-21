@@ -163,4 +163,11 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(num.challenge21(input: 12) == (10, 17), "Challenge 21 failed")
         XCTAssert(num.challenge21(input: 28) == (26, 35), "Challenge 21 failed")
     }
+
+    func testChallenge22() {
+        XCTAssert(num.challenge22(input: 32) == 4, "Challenge 22 failed")
+        XCTAssert(num.challenge22(input: 4) == 32, "Challenge 22 failed")
+        XCTAssert(num.challenge22(input: 41) == 148, "Challenge 22 failed")
+        XCTAssert(num.challenge22(input: 148) == 41, "Challenge 22 failed")
+    }
 }
