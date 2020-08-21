@@ -96,4 +96,12 @@ struct NumberChallenges {
         let outputString = String(reversed)
         return Int(outputString, radix: 2) ?? 0
     }
+
+    // Challenge 23: Integer disguised as string
+    func challenge23(input: String) -> Bool {
+        for char in input {
+            if Int(String(char)) == nil { return false }
+        }
+        return true
+    }
 }
