@@ -116,4 +116,13 @@ struct NumberChallenges {
             total + Int(String(currentNumber))! // since all non-digits were filtered before, a force unwrap is safe here
         })
     }
+
+    // Challenge 25: Calculate a square root by hand
+    // Not sure why this challenge was marked taxing, there was no mention of not using the "pow" function
+    func challenge25(input: Int) -> Int {
+        // raising something to the power of 0.5 is the same as calculating the square root
+        let result = pow(Double(input), 0.5)
+        // floor used since the challenge asked for the nearest rounded down integer
+        return Int(floor(result))
+    }
 }
