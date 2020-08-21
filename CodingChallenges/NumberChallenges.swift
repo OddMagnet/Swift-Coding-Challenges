@@ -55,4 +55,35 @@ struct NumberChallenges {
         }
         return true
     }
+
+    // Challenge 21: Counting binary ones
+    func challenge21(input: Int) -> (nextLowest: Int?, nextHighest: Int?) {
+        guard input > 0 else { return (0, 0) }
+        // helper function
+        func binaryOnes(in input: Int) -> Int {
+            let inputAsBinaryString = String(input, radix: 2)
+            return inputAsBinaryString.filter({ $0 == "1" }).count
+        }
+        // variables
+        var nextLowest: Int?
+        var nextHighest: Int?
+        let amountOfOnesInInput = binaryOnes(in: input)
+
+        // Search for lower
+        for i in (0 ..< input).reversed() {
+            if binaryOnes(in: i) == amountOfOnesInInput {
+                nextLowest = i
+                break
+            }
+        }
+        // Search for higher
+        for i in (input + 1)...Int.max {
+            if binaryOnes(in: i) == amountOfOnesInInput {
+                nextHighest = i
+                break
+            }
+        }
+
+        return (nextLowest, nextHighest)
+    }
 }
