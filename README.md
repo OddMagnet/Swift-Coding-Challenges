@@ -18,15 +18,15 @@
 15. Reverse the words in a string
 
 ## Number Challenges
-1. Fizz Buzz
-2. Generate a random number in a range
-3. Recreate the pow() function
-4. Swap two numbers
-5. Number is prime
-6. Counting binary ones
-7. Binary reverse
-8. Integer disguised as string
-9. Add numbers inside a string
-10. Calculate a square root by hand
-11. Subtract without subtract
+16. Fizz Buzz
+17. Generate a random number in a range
+18. Recreate the pow() function
+19. Swap two numbers
+20. Number is prime
+21. Counting binary ones
+22. Binary reverse
+23. Integer disguised as string
+24. Add numbers inside a string
+25. Calculate a square root by hand
+26. Subtract without subtract
 
