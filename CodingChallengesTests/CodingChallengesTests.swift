@@ -203,4 +203,13 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(file.challenge27(filename: "challenge27", lineCount: 100) == "Twelfth Night, Othello, Macbeth, King Lear, Julius Caesar, Hamlet, Cymbeline, Coriolanus, Antony And Cleopatra", "Challenge 27 failed")
         XCTAssert(file.challenge27(filename: "challenge27", lineCount: 0) == "")
     }
+
+    func testChallenge28() {
+        let logFile = "challenge28.txt"
+        let logMessage = "Testing the log file"
+        file.challenge28(file: logFile, message: logMessage)
+        let logContents = try! String(contentsOfFile: logFile)
+        let lines = logContents.components(separatedBy: .newlines)
+        XCTAssert(lines[lines.count-2].contains(logMessage), "Challenge 28 failed")
+    }
 }
