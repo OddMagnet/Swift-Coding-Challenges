@@ -190,4 +190,9 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(num.challenge25(input: 16) == 4, "Challenge 25 failed")
         XCTAssert(num.challenge25(input: 15) == 3, "Challenge 25 failed")
     }
+
+    func testChallenge26() {
+        XCTAssert(num.challenge26(subtract: 5, from: 9) == 4, "Challenge 26 failed")
+        XCTAssert(num.challenge26(subtract: 10, from: 30) == 20, "Challenge 26 failed")
+    }
 }

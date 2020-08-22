@@ -125,4 +125,12 @@ struct NumberChallenges {
         // floor used since the challenge asked for the nearest rounded down integer
         return Int(floor(result))
     }
+
+    // Challenge 26: Subtract without subtract
+    func challenge26(subtract b: Int, from a: Int) -> Int {
+        // bitwise flipping a number turns a positive integer into the negative -1, e.g. +5 turns into -6
+        // which is why there is an additional +1
+        let bitWiseFlipped = ~b + 1
+        return a + bitWiseFlipped
+    }
 }
