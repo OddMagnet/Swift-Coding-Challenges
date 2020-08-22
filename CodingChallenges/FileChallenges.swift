@@ -40,4 +40,11 @@ struct FileChallenges {
             print("Error writing to log file: \(error.localizedDescription)")
         }
     }
+
+    // Challenge 29: Documents directory
+    func challenge29() -> URL {
+        let documentPaths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        print(documentPaths[0])
+        return documentPaths[0]
+    }
 }

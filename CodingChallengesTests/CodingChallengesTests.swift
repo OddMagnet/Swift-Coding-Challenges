@@ -212,4 +212,8 @@ class CodingChallengesTests: XCTestCase {
         let lines = logContents.components(separatedBy: .newlines)
         XCTAssert(lines[lines.count-2].contains(logMessage), "Challenge 28 failed")
     }
+
+    func testChallenge29() {
+        XCTAssert(file.challenge29() == FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0], "Challenge 29 failed")
+    }
 }
