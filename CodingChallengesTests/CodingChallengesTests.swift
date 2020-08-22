@@ -12,6 +12,7 @@ import XCTest
 class CodingChallengesTests: XCTestCase {
     var str: StringChallenges = StringChallenges()
     var num: NumberChallenges = NumberChallenges()
+    var file: FileChallenges = FileChallenges()
 
     // MARK: String Challenges -
     func testChallenge1() {
@@ -194,5 +195,12 @@ class CodingChallengesTests: XCTestCase {
     func testChallenge26() {
         XCTAssert(num.challenge26(subtract: 5, from: 9) == 4, "Challenge 26 failed")
         XCTAssert(num.challenge26(subtract: 10, from: 30) == 20, "Challenge 26 failed")
+    }
+
+    // MARK: - File Challenges -
+    func testChallenge27() {
+        XCTAssert(file.challenge27(filename: "challenge27", lineCount: 3) == "Twelfth Night, Othello, Macbeth", "Challenge 27 failed")
+        XCTAssert(file.challenge27(filename: "challenge27", lineCount: 100) == "Twelfth Night, Othello, Macbeth, King Lear, Julius Caesar, Hamlet, Cymbeline, Coriolanus, Antony And Cleopatra", "Challenge 27 failed")
+        XCTAssert(file.challenge27(filename: "challenge27", lineCount: 0) == "")
     }
 }
