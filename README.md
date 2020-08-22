@@ -30,3 +30,14 @@
 25. Calculate a square root by hand
 26. Subtract without subtract
 
+## File Challenges
+27. Print last lines
+28. Log a message
+29. Documents directory
+30. New JPEGs
+31. Copy recursively
+32. Word frequency
+33. Find duplicate filenames
+34. Find executables
+35. Convert images
+36. Print error lines
