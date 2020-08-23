@@ -222,4 +222,41 @@ class CodingChallengesTests: XCTestCase {
         // Make sure to copy some images to the specified directory before uncommenting the below test, also comment the above test then
 //        XCTAssert(file.challenge30(directory: "SomeDirectory") == ["imageName.jpg"], "Challenge 30 failed")
     }
+
+    // TODO: find a way to make the copying work on macos
+    func testChallenge31() {
+        // set up the paths
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentsDirectory = paths[0]
+        let documentsURL = URL(string: documentsDirectory)!
+        let sourceURL = documentsURL.appendingPathComponent("Source")
+        let destinationURL = documentsURL.appendingPathComponent("Destination")
+        if !FileManager.default.fileExists(atPath: sourceURL.absoluteString) {
+            do {
+                try FileManager.default.createDirectory(atPath: sourceURL.absoluteString, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+                print(error.localizedDescription);
+            }
+        }
+        if !FileManager.default.fileExists(atPath: destinationURL.absoluteString) {
+            do {
+                try FileManager.default.createDirectory(atPath: destinationURL.absoluteString, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+                print(error.localizedDescription);
+            }
+        }
+
+        // create a test file to copy
+        do {
+            let scheme = URL(string: "file://")!
+            let file = sourceURL.appendingPathComponent("challenge31", isDirectory: false).appendingPathExtension("txt")
+            let fileURL = scheme.appendingPathComponent(file.absoluteString, isDirectory: false)
+            try "Hello, World!".write(to: fileURL, atomically: true, encoding: .utf8)
+        } catch {
+            print(error.localizedDescription);
+        }
+
+        // test the challenge function
+        XCTAssert(file.challenge31(copyFrom: sourceURL.absoluteString, copyTo: destinationURL.absoluteString) == true, "Challenge 31 failed")
+    }
 }

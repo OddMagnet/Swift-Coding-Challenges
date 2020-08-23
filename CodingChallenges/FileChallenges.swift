@@ -74,4 +74,28 @@ struct FileChallenges {
         }
         return images
     }
+
+    // Challenge 31: Copy recursively
+    func challenge31(copyFrom source: String, copyTo destination: String) -> Bool {
+        let fileManager = FileManager.default
+        var exists: ObjCBool = false
+
+        // make sure the given source is a directory that exists
+        guard fileManager.fileExists(atPath: source, isDirectory: &exists) || exists.boolValue == false else { return false }
+
+        // create urls for source and destination
+        let sourceURL = URL(fileURLWithPath: source)
+        let destinationURL = URL(fileURLWithPath: destination)
+
+        // try copying
+        do {
+            try fileManager.copyItem(at: sourceURL, to: destinationURL)
+        } catch {
+            print("Error while trying to copy from \(source) to \(destination): \n\(error.localizedDescription)")
+            return false
+        }
+
+        // everything went smoothly
+        return true
+    }
 }
