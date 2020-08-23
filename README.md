@@ -35,9 +35,9 @@
 28. Log a message
 29. Documents directory
 30. New JPEGs
-31. Copy recursively
-32. Word frequency
-33. Find duplicate filenames
-34. Find executables
-35. Convert images
-36. Print error lines
+31. Copy recursively - __skipped (for now)__
+32. Word frequency - __skipped (for now)__
+33. Find duplicate filenames - __skipped (for now)__
+34. Find executables - __skipped (for now)__
+35. Convert images - __skipped (for now)__
+36. Print error lines - __skipped (for now)__
