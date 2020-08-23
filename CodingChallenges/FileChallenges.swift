@@ -47,4 +47,31 @@ struct FileChallenges {
         print(documentPaths[0])
         return documentPaths[0]
     }
+
+    // Challenge 30: New JPEGs
+    func challenge30(directory: String) -> [String] {
+        // create path and filemanager constants
+        let path = URL(fileURLWithPath: directory)
+//        let path = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let fileManager = FileManager.default
+
+        // make sure there are files in the directory
+        guard let contentURLS = try? fileManager.contentsOfDirectory(at: path, includingPropertiesForKeys: nil) else { return [] }
+
+        var images = [String]()
+        // for every file in the directory
+        for fileURL in contentURLS {
+            // check the file extension
+            if fileURL.pathExtension == "jpg" || fileURL.pathExtension == "jpeg" {
+                // if it matches, try to get the attributes and creation date, if either of them isn't possible just continue with the next file
+                guard let fileAttributes = try? fileManager.attributesOfItem(atPath: fileURL.path) else { continue }
+                guard let fileCreationDate = fileAttributes[.creationDate] as? Date else { continue }
+                // check if the file is newer than 48 hours (60 seconds * 60 minutes * 48 hours, -1 for past time)
+                if fileCreationDate > Date(timeIntervalSinceNow: -1 * 60 * 60 * 48) {
+                    images.append(fileURL.lastPathComponent)
+                }
+            }
+        }
+        return images
+    }
 }

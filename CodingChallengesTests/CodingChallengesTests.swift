@@ -216,4 +216,10 @@ class CodingChallengesTests: XCTestCase {
     func testChallenge29() {
         XCTAssert(file.challenge29() == FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0], "Challenge 29 failed")
     }
+
+    func testChallenge30() {
+        XCTAssert(file.challenge30(directory: "SomeDirectory") == [], "Challenge 30 failed")
+        // Make sure to copy some images to the specified directory before uncommenting the below test, also comment the above test then
+//        XCTAssert(file.challenge30(directory: "SomeDirectory") == ["imageName.jpg"], "Challenge 30 failed")
+    }
 }
