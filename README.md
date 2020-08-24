@@ -41,3 +41,23 @@
 34. Find executables - __skipped (for now)__
 35. Convert images - __skipped (for now)__
 36. Print error lines - __skipped (for now)__
+
+## Collection Challenges
+37. Count the numbers
+38. Find N smallest
+39. Sort a string array by length
+40. Missing numbers in array
+41. Find the median
+42. Recreate firstIndex(of:)
+43. Linked lists
+44. Linked list mid-point
+45. Traversing the tree
+46. Recreate map()
+47. Recreate min()
+48. Implement a deque data structure
+49. Sum the even repeats
+50. Count the largest range
+51. Reversing linked lists
+52. Sum an array of numbers
+53. Linked lists with a loop
+54. Binary search trees
