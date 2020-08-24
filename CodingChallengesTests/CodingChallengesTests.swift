@@ -10,9 +10,10 @@ import XCTest
 @testable import CodingChallenges
 
 class CodingChallengesTests: XCTestCase {
-    var str: StringChallenges = StringChallenges()
-    var num: NumberChallenges = NumberChallenges()
-    var file: FileChallenges = FileChallenges()
+    var str = StringChallenges()
+    var num = NumberChallenges()
+    var file = FileChallenges()
+    var col = CollectionChallenges()
 
     // MARK: String Challenges -
     func testChallenge1() {
@@ -258,5 +259,15 @@ class CodingChallengesTests: XCTestCase {
 
         // test the challenge function
         XCTAssert(file.challenge31(copyFrom: sourceURL.absoluteString, copyTo: destinationURL.absoluteString) == true, "Challenge 31 failed")
+    }
+
+    // TODO: Add rest of file challenges and their tests
+
+    // MARK: - Collection Challenges -
+    func testChallenge37() {
+        XCTAssert(col.challenge37(input: [5, 15, 55, 515], countOf: "5") == 6, "Challenge 37 failed")
+        XCTAssert(col.challenge37(input: [5, 15, 55, 515], countOf: "1") == 2, "Challenge 37 failed")
+        XCTAssert(col.challenge37(input: [55555], countOf: "5") == 5, "Challenge 37 failed")
+        XCTAssert(col.challenge37(input: [55555], countOf: "1") == 0, "Challenge 37 failed")
     }
 }

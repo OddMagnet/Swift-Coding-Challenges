@@ -14,6 +14,7 @@
 		4C45F0A024E91ACE001AD0F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C45F09E24E91ACE001AD0F9 /* Main.storyboard */; };
 		4C45F0AC24E91ACE001AD0F9 /* CodingChallengesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C45F0AB24E91ACE001AD0F9 /* CodingChallengesTests.swift */; };
 		4C45F0B724E91AEA001AD0F9 /* StringChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C45F0B624E91AEA001AD0F9 /* StringChallenges.swift */; };
+		4C63B7B124F39B7D0074A8A9 /* CollectionChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C63B7B024F39B7D0074A8A9 /* CollectionChallenges.swift */; };
 		4C6437DD24EEC3F200012E4D /* NumberChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6437DC24EEC3F200012E4D /* NumberChallenges.swift */; };
 		4CD9E1CE24F16D39008A7E28 /* FileChallenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD9E1CD24F16D39008A7E28 /* FileChallenges.swift */; };
 		4CD9E1D024F17191008A7E28 /* challenge27.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4CD9E1CF24F17191008A7E28 /* challenge27.txt */; };
@@ -42,6 +43,7 @@
 		4C45F0AB24E91ACE001AD0F9 /* CodingChallengesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingChallengesTests.swift; sourceTree = "<group>"; };
 		4C45F0AD24E91ACE001AD0F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C45F0B624E91AEA001AD0F9 /* StringChallenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringChallenges.swift; sourceTree = "<group>"; };
+		4C63B7B024F39B7D0074A8A9 /* CollectionChallenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionChallenges.swift; sourceTree = "<group>"; };
 		4C6437DC24EEC3F200012E4D /* NumberChallenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberChallenges.swift; sourceTree = "<group>"; };
 		4CD9E1CD24F16D39008A7E28 /* FileChallenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileChallenges.swift; sourceTree = "<group>"; };
 		4CD9E1CF24F17191008A7E28 /* challenge27.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = challenge27.txt; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				4C45F0B624E91AEA001AD0F9 /* StringChallenges.swift */,
 				4C6437DC24EEC3F200012E4D /* NumberChallenges.swift */,
 				4CD9E1CD24F16D39008A7E28 /* FileChallenges.swift */,
+				4C63B7B024F39B7D0074A8A9 /* CollectionChallenges.swift */,
 				4C45F09924E91ACE001AD0F9 /* Assets.xcassets */,
 				4CD9E1CF24F17191008A7E28 /* challenge27.txt */,
 				4C45F09E24E91ACE001AD0F9 /* Main.storyboard */,
@@ -221,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C6437DD24EEC3F200012E4D /* NumberChallenges.swift in Sources */,
+				4C63B7B124F39B7D0074A8A9 /* CollectionChallenges.swift in Sources */,
 				4C45F09824E91ACB001AD0F9 /* ContentView.swift in Sources */,
 				4CD9E1CE24F16D39008A7E28 /* FileChallenges.swift in Sources */,
 				4C45F09624E91ACB001AD0F9 /* AppDelegate.swift in Sources */,
