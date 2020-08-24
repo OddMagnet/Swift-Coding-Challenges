@@ -283,4 +283,12 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(col.challenge39(input: ["paul", "taylor", "adele"]) == ["taylor", "adele", "paul"], "Challenge 39 failed")
         XCTAssert(col.challenge39(input: []) == [], "Challenge 39 failed")
     }
+
+    func testChallenge40() {
+        var testArray = Array(1...100)
+        testArray.remove(at: 25)
+        testArray.remove(at: 20)
+        testArray.remove(at: 6)
+        XCTAssert(col.challenge40(input: testArray) == [7, 21, 26], "Challenge 40 failed")
+    }
 }

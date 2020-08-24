@@ -68,4 +68,17 @@ struct CollectionChallenges {
     func challenge39(input: [String]) -> [String] {
         return input.sortedByLongest()
     }
+
+    // Challenge 40: Missing numbers in array
+    func challenge40(input: [Int]) -> [Int] {
+        let wholeArray = Array(1...100)
+        let inputSet = Set(input)       // using a Set for it's faster lookup
+        var result: [Int] = []
+
+        for number in wholeArray {
+            if !inputSet.contains(number) { result.append(number) }
+        }
+
+        return result
+    }
 }
