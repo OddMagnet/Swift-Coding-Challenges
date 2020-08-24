@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: Challenge 37 extension
 extension Collection where Iterator.Element == Int {
     func count(of digit: Character) -> Int {
         /* First solution
@@ -36,9 +37,21 @@ extension Collection where Iterator.Element == Int {
     }
 }
 
+// MARK: Challenge 38 extension
+extension Collection where Iterator.Element: Comparable {
+    func smallest(count: Int) -> [Iterator.Element] {
+        return Array(self.sorted().prefix(count))
+    }
+}
+
 struct CollectionChallenges {
     // Challenge 37: Count the numbers
     func challenge37(input: [Int], countOf digit: Character) -> Int {
         return input.count(of: digit)
+    }
+
+    // Challenge 38: Find N smallest
+    func challenge38<T: Comparable>(input: [T], count: Int) -> [T] {
+        return input.smallest(count: count)
     }
 }
