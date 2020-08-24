@@ -44,6 +44,15 @@ extension Collection where Iterator.Element: Comparable {
     }
 }
 
+// MARK: Challenge 38 extension
+extension Collection where Iterator.Element == String {
+    func sortedByLongest(longestFirst: Bool = true) -> [Iterator.Element] {
+        return self.sorted(by: {
+            $0.count > $1.count
+        })
+    }
+}
+
 struct CollectionChallenges {
     // Challenge 37: Count the numbers
     func challenge37(input: [Int], countOf digit: Character) -> Int {
@@ -53,5 +62,10 @@ struct CollectionChallenges {
     // Challenge 38: Find N smallest
     func challenge38<T: Comparable>(input: [T], count: Int) -> [T] {
         return input.smallest(count: count)
+    }
+
+    // Challenge 39: Sort a string array by length
+    func challenge39(input: [String]) -> [String] {
+        return input.sortedByLongest()
     }
 }

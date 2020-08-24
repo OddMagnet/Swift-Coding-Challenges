@@ -277,4 +277,10 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(col.challenge38(input: [256, 16], count: 3) == [16, 256], "Challenge 38 failed")
         XCTAssert(col.challenge38(input: [String](), count: 3) == [], "Challenge 38 failed")
     }
+
+    func testChallenge39() {
+        XCTAssert(col.challenge39(input: ["a", "abc", "ab"]) == ["abc", "ab", "a"], "Challenge 39 failed")
+        XCTAssert(col.challenge39(input: ["paul", "taylor", "adele"]) == ["taylor", "adele", "paul"], "Challenge 39 failed")
+        XCTAssert(col.challenge39(input: []) == [], "Challenge 39 failed")
+    }
 }
