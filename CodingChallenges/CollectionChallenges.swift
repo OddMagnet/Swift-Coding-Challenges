@@ -75,10 +75,8 @@ extension Collection where Iterator.Element == Int {
 // MARK: Challenge 42 extension
 extension Collection where Iterator.Element: Comparable {
     func firstIndexOf(_ searched: Iterator.Element) -> Int? {
-        var indexCounter = 0
-        for element in self {
-            if element == searched { return indexCounter }
-            else { indexCounter += 1 }
+        for (index, element) in self.enumerated() {
+            if element == searched { return index }
         }
         return nil
     }
