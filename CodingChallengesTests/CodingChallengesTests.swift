@@ -291,4 +291,12 @@ class CodingChallengesTests: XCTestCase {
         testArray.remove(at: 6)
         XCTAssert(col.challenge40(input: testArray) == [7, 21, 26], "Challenge 40 failed")
     }
+
+    func testChallenge41() {
+        XCTAssert(col.challenge41(input: [1, 2, 3]) == 2, "Challenge 41 failed")
+        XCTAssert(col.challenge41(input: [1, 2, 9]) == 2, "Challenge 41 failed")
+        XCTAssert(col.challenge41(input: [1, 3, 5, 7, 9]) == 5, "Challenge 41 failed")
+        XCTAssert(col.challenge41(input: [1, 2, 3, 4]) == 2.5, "Challenge 41 failed")
+        XCTAssert(col.challenge41(input: []) == nil, "Challenge 41 failed")
+    }
 }

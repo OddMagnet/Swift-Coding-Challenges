@@ -53,6 +53,25 @@ extension Collection where Iterator.Element == String {
     }
 }
 
+extension Int {
+    func isEven() -> Bool {
+        return self % 2 == 0
+    }
+}
+
+// MARK: Challenge 41 extension
+extension Collection where Iterator.Element == Int {
+    func median() -> Double? {
+        guard count != 0 else { return nil }
+
+        let sorted = self.sorted()
+        let middleIndex = sorted.count / 2
+
+        if self.count.isEven() { return Double(sorted[middleIndex] + sorted[middleIndex - 1]) / 2 }
+        else { return Double(sorted[middleIndex]) }
+    }
+}
+
 struct CollectionChallenges {
     // Challenge 37: Count the numbers
     func challenge37(input: [Int], countOf digit: Character) -> Int {
@@ -80,5 +99,10 @@ struct CollectionChallenges {
         }
 
         return result
+    }
+
+    // Challenge 41: Find the median
+    func challenge41(input: [Int]) -> Double? {
+        return input.median()
     }
 }
