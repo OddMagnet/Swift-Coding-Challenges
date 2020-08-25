@@ -72,6 +72,18 @@ extension Collection where Iterator.Element == Int {
     }
 }
 
+// MARK: Challenge 42 extension
+extension Collection where Iterator.Element: Comparable {
+    func firstIndexOf(_ searched: Iterator.Element) -> Int? {
+        var indexCounter = 0
+        for element in self {
+            if element == searched { return indexCounter }
+            else { indexCounter += 1 }
+        }
+        return nil
+    }
+}
+
 struct CollectionChallenges {
     // Challenge 37: Count the numbers
     func challenge37(input: [Int], countOf digit: Character) -> Int {
@@ -104,5 +116,10 @@ struct CollectionChallenges {
     // Challenge 41: Find the median
     func challenge41(input: [Int]) -> Double? {
         return input.median()
+    }
+
+    // Challenge 42: Recreate firstIndex(of:)
+    func challenge42<T: Comparable>(input: [T], element: T) -> Int? {
+        return input.firstIndexOf(element)
     }
 }

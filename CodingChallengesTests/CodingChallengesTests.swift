@@ -299,4 +299,10 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(col.challenge41(input: [1, 2, 3, 4]) == 2.5, "Challenge 41 failed")
         XCTAssert(col.challenge41(input: []) == nil, "Challenge 41 failed")
     }
+
+    func testChallenge42() {
+        XCTAssert(col.challenge42(input: [1, 2, 3], element: 1) == 0, "Challenge 42 failed")
+        XCTAssert(col.challenge42(input: [1, 2, 3], element: 3) == 2, "Challenge 42 failed")
+        XCTAssert(col.challenge42(input: [1, 2, 3], element: 5) == nil, "Challenge 42 failed")
+    }
 }
