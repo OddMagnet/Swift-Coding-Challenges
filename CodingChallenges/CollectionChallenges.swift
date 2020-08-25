@@ -120,4 +120,24 @@ struct CollectionChallenges {
     func challenge42<T: Comparable>(input: [T], element: T) -> Int? {
         return input.firstIndexOf(element)
     }
+
+    // Challenge 43: Linked lists, print all nodes
+    func challenge43() -> String {
+        let linkedList = LinkedList<Character>()
+        var prevNode: Node<Character>? = nil
+
+        for letter in "abcdefghijklmnopqrstuvwxyz" {
+            let newNode = Node(value: letter)
+
+            if let previous = prevNode {    // not the first node
+                previous.next = newNode
+            } else {                        // first node
+                linkedList.head = newNode
+            }
+
+            prevNode = newNode
+        }
+
+        return linkedList.allNodesValuesString
+    }
 }

@@ -305,4 +305,8 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(col.challenge42(input: [1, 2, 3], element: 3) == 2, "Challenge 42 failed")
         XCTAssert(col.challenge42(input: [1, 2, 3], element: 5) == nil, "Challenge 42 failed")
     }
+
+    func testChallenge43() {
+        XCTAssert(col.challenge43() == "a b c d e f g h i j k l m n o p q r s t u v w x y z", "Challenge 43 failed")
+    }
 }
