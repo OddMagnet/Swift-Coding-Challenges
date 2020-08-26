@@ -311,6 +311,8 @@ class CodingChallengesTests: XCTestCase {
     }
 
     func testChallenge44() {
-//        XCTAssert(col.challenge44(list: <#T##LinkedList<T>#>))
+        XCTAssert(col.challenge44(input: [1, 2, 3, 4, 5]) == 3, "Challenge 44 failed")
+        XCTAssert(col.challenge44(input: [1, 2, 3, 4]) == 2, "Challenge 44 failed")
+        XCTAssert(col.challenge44(input: Array<Character>("abcdefghijklmnopqrstuvwxyz")) == "m", "Challenge 44 failed")
     }
 }

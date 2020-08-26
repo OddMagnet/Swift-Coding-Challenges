@@ -128,7 +128,8 @@ struct CollectionChallenges {
     }
 
     // Challenge 44: Linked list mid- point
-    func challenge44<T>(list: LinkedList<T>) -> T? {
+    func challenge44<T>(input: [T]) -> T? {
+        let list = LinkedList<T>(with: input)
         return list.midPoint()
     }
 
