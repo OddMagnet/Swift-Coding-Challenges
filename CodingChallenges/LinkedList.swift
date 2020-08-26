@@ -56,25 +56,16 @@ class LinkedList<T> {
 
     // MARK: Challenge 44
     func midPoint() -> T? {
-        var counter = 0
-        var node = head
+        var midPointer = head
+        var endPointer = head
 
-        // get the node count
-        while let current = node {
-            counter += 1;
-            node = current.next
+        // by moving the midPointer by one item at a time and the endPointer by two,
+        // by the time the endPointer reaches the end, the midPointer will be in the middle
+        while endPointer != nil && endPointer?.next != nil {
+            midPointer = midPointer?.next
+            endPointer = endPointer?.next?.next
         }
 
-        // get the mid-point
-        let midpoint = counter / 2
-        node = head
-        while let current = node {
-            counter -= 1
-            if counter == midpoint { return current.value }
-            node = current.next
-        }
-
-        // if list was empty, return nil
-        return nil
+        return midPointer?.value
     }
 }
