@@ -315,4 +315,23 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(col.challenge44(input: [1, 2, 3, 4]) == 3, "Challenge 44 failed")
         XCTAssert(col.challenge44(input: Array<Character>("abcdefghijklmnopqrstuvwxyz")) == "n", "Challenge 44 failed")
     }
+
+    // MARK: PLACEHOLDER for challenge 45 - 53 tests
+
+    func testChallenge54() {
+        // Balanced
+        XCTAssert(col.challenge54(input: [2, 1, 3]), "Challenge 54 failed")
+        XCTAssert(col.challenge54(input: [5, 1, 7, 6, 2, 1, 9]), "Challenge 54 failed")
+        XCTAssert(col.challenge54(input: [5, 1, 7, 6, 2, 1, 9, 1]), "Challenge 54 failed")
+        XCTAssert(col.challenge54(input: [5, 1, 7, 6, 2, 1, 9, 1, 3]), "Challenge 54 failed")
+        XCTAssert(col.challenge54(input: [50, 25, 100, 26, 101, 24, 99]), "Challenge 54 failed")
+        XCTAssert(col.challenge54(input: [1]), "Challenge 54 failed")
+        XCTAssert(col.challenge54(input: ["k", "t", "d", "a", "z", "m", "f"]), "Challenge 54 failed")
+        XCTAssert(col.challenge54(input: [Character]()), "Challenge 54 failed")
+
+        // Unbalanced
+        XCTAssert(col.challenge54(input: [1, 2, 3, 4, 5]) == false, "Challenge 54 failed")
+        XCTAssert(col.challenge54(input: [10, 5, 4, 3, 2, 1, 11, 12, 13, 14, 15]) == false, "Challenge 54 failed")
+        XCTAssert(col.challenge54(input: ["f", "d", "c", "e", "a", "b"]) == false, "Challenge 54 failed")
+    }
 }

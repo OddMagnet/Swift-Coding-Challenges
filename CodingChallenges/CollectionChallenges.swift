@@ -133,4 +133,12 @@ struct CollectionChallenges {
         return list.midPoint()
     }
 
+    // MARK: PLACEHOLDER for challenges 45 - 53
+
+    // Challenge 54: Binary search trees
+    func challenge54<T: Comparable>(input: [T]) -> Bool {
+        let tree = BinarySearchTree(with: input)
+        return tree.isBalanced()
+    }
+
 }
