@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Node<T> {
+class LinkedListNode<T> {
     var value: T
-    var next: Node?
+    var next: LinkedListNode?
 
     init(value: T) {
         self.value = value
@@ -18,14 +18,14 @@ class Node<T> {
 }
 
 class LinkedList<T> {
-    var head: Node<T>?
+    var head: LinkedListNode<T>?
 
     init(with content: [T]) {
         guard content.count != 0 else { return }
-        var prevNode: Node<T>? = nil
+        var prevNode: LinkedListNode<T>? = nil
 
         for element in content {
-            let newNode = Node(value: element)
+            let newNode = LinkedListNode(value: element)
 
             // check that head is not nil, set if needed
             if let previous = prevNode { previous.next = newNode }
