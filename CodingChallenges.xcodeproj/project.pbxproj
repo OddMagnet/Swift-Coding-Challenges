@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C38E5A924F6913D00872064 /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38E5A824F6913D00872064 /* BinarySearchTree.swift */; };
 		4C45F09624E91ACB001AD0F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C45F09524E91ACB001AD0F9 /* AppDelegate.swift */; };
 		4C45F09824E91ACB001AD0F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C45F09724E91ACB001AD0F9 /* ContentView.swift */; };
 		4C45F09A24E91ACE001AD0F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C45F09924E91ACE001AD0F9 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C38E5A824F6913D00872064 /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
 		4C45F09224E91ACB001AD0F9 /* CodingChallenges.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodingChallenges.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C45F09524E91ACB001AD0F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C45F09724E91ACB001AD0F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				4CD9E1CD24F16D39008A7E28 /* FileChallenges.swift */,
 				4C63B7B024F39B7D0074A8A9 /* CollectionChallenges.swift */,
 				4CE4053924F4EAC4002321CC /* LinkedList.swift */,
+				4C38E5A824F6913D00872064 /* BinarySearchTree.swift */,
 				4C45F09924E91ACE001AD0F9 /* Assets.xcassets */,
 				4CD9E1CF24F17191008A7E28 /* challenge27.txt */,
 				4C45F09E24E91ACE001AD0F9 /* Main.storyboard */,
@@ -230,6 +233,7 @@
 				4C63B7B124F39B7D0074A8A9 /* CollectionChallenges.swift in Sources */,
 				4C45F09824E91ACB001AD0F9 /* ContentView.swift in Sources */,
 				4CD9E1CE24F16D39008A7E28 /* FileChallenges.swift in Sources */,
+				4C38E5A924F6913D00872064 /* BinarySearchTree.swift in Sources */,
 				4C45F09624E91ACB001AD0F9 /* AppDelegate.swift in Sources */,
 				4C45F0B724E91AEA001AD0F9 /* StringChallenges.swift in Sources */,
 				4CE4053A24F4EAC4002321CC /* LinkedList.swift in Sources */,
