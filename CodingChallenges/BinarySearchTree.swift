@@ -66,4 +66,28 @@ class BinarySearchTree<T: Comparable> {
             }
         }
     }
+
+    private func minDepth(from node: TreeNode<T>?) -> Int {
+        // check that node is not nil, non-existing nodes add no depth
+        guard let node = node else { return 0 }
+        // recursively call this function until an empty node is found
+        let totalMinDepth = 1 + min(minDepth(from: node.left), minDepth(from: node.right))
+        return totalMinDepth
+    }
+
+    private func maxDepth(from node: TreeNode<T>?) -> Int {
+        // check that node is not nil, non-existing nodes add no depth
+        guard let node = node else { return 0 }
+        // recursively call this function until an empty node is found
+        let totalMaxDepth = 1 + max(maxDepth(from: node.left), maxDepth(from: node.right))
+        return totalMaxDepth
+    }
+
+    // a BST is considered balanced when the difference between minDepth and maxDepth is <= 1
+    func isBalanced() -> Bool {
+        // check if there is a root. Empty trees are always balanced
+        guard let root = root else { return true }
+        let difference = maxDepth(from: root) - minDepth(from: root)
+        return difference <= 1
+    }
 }
