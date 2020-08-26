@@ -122,22 +122,14 @@ struct CollectionChallenges {
     }
 
     // Challenge 43: Linked lists, print all nodes
-    func challenge43() -> String {
-        let linkedList = LinkedList<Character>()
-        var prevNode: Node<Character>? = nil
-
-        for letter in "abcdefghijklmnopqrstuvwxyz" {
-            let newNode = Node(value: letter)
-
-            if let previous = prevNode {    // not the first node
-                previous.next = newNode
-            } else {                        // first node
-                linkedList.head = newNode
-            }
-
-            prevNode = newNode
-        }
-
+    func challenge43(input: String) -> String {
+        let linkedList = LinkedList<Character>(with: Array<Character>(input))
         return linkedList.allNodesValuesString
     }
+
+    // Challenge 44: Linked list mid- point
+    func challenge44<T>(list: LinkedList<T>) -> T? {
+        return list.midPoint()
+    }
+
 }

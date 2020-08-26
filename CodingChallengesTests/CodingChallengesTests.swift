@@ -307,6 +307,10 @@ class CodingChallengesTests: XCTestCase {
     }
 
     func testChallenge43() {
-        XCTAssert(col.challenge43() == "a b c d e f g h i j k l m n o p q r s t u v w x y z", "Challenge 43 failed")
+        XCTAssert(col.challenge43(input: "abcdefghijklmnopqrstuvwxyz") == "a b c d e f g h i j k l m n o p q r s t u v w x y z", "Challenge 43 failed")
+    }
+
+    func testChallenge44() {
+//        XCTAssert(col.challenge44(list: <#T##LinkedList<T>#>))
     }
 }
