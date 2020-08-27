@@ -316,7 +316,19 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(col.challenge44(input: Array<Character>("abcdefghijklmnopqrstuvwxyz")) == "n", "Challenge 44 failed")
     }
 
-    // MARK: PLACEHOLDER for challenge 45 - 53 tests
+    func testChallenge45() {
+        let input = [2, 1, 3]
+
+        var array = [Int]()
+        col.challenge45(input: input, closure: { array.append($0.key) })
+        XCTAssert(array == [1, 2, 3], "Challenge 45 failed")
+
+        var sum = 0
+        col.challenge45(input: input, closure: { sum += $0.key })
+        XCTAssert(sum == 6, "Challenge 45 failed")
+    }
+
+    // MARK: PLACEHOLDER for challenge 46 - 53 tests
 
     func testChallenge54() {
         // Balanced

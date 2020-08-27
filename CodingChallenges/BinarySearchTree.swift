@@ -16,6 +16,13 @@ class TreeNode<T> {
     init(key: T) {
         self.key = key
     }
+
+    // Challenge 45: Traversing the tree
+    func traverse(closure: (TreeNode<T>) -> Void) -> Void {
+        left?.traverse(closure: closure)
+        closure(self)
+        right?.traverse(closure: closure)
+    }
 }
 
 // Challenge 54: Binary search trees
@@ -83,6 +90,7 @@ class BinarySearchTree<T: Comparable> {
         return totalMaxDepth
     }
 
+    // Challenge 54: Binary search trees
     // a BST is considered balanced when the difference between minDepth and maxDepth is <= 1
     func isBalanced() -> Bool {
         // check if there is a root. Empty trees are always balanced
