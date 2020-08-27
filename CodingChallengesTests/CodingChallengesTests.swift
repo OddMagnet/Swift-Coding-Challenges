@@ -341,7 +341,19 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(col.challenge47(input: [String]()) == nil, "Challenge 47 failed")
     }
 
-    // MARK: PLACEHOLDER for challenge 48 - 53 tests
+    func testChallenge48() {
+        var numbers = Deque<Int>()
+        numbers.pushBack(5)
+        numbers.pushBack(8)
+        numbers.pushBack(3)
+        XCTAssert(numbers.count == 3, "Challenge 48 failed")
+        XCTAssert(numbers.popFront()! == 5, "Challenge 48 failed")
+        XCTAssert(numbers.popBack()! == 3, "Challenge 48 failed")
+        XCTAssert(numbers.popFront()! == 8, "Challenge 48 failed")
+        XCTAssert(numbers.popBack() == nil, "Challenge 48 failed")
+    }
+
+    // MARK: PLACEHOLDER for challenge 49 - 53 tests
 
     func testChallenge54() {
         // Balanced

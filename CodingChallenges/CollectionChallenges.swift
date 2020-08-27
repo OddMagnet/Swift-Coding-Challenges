@@ -169,7 +169,10 @@ struct CollectionChallenges {
         return input.myMin()
     }
 
-    // MARK: PLACEHOLDER for challenges 48 - 53
+    // Challenge 48: Implement a deque data structure
+    // See: DoubleEndedQueue.swift
+
+    // MARK: PLACEHOLDER for challenges 49 - 53
 
     // Challenge 54: Binary search trees
     func challenge54<T: Comparable>(input: [T]) -> Bool {
