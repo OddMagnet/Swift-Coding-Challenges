@@ -82,6 +82,17 @@ extension Collection where Iterator.Element: Comparable {
     }
 }
 
+// MARK: Challenge 46 extension
+extension Collection {
+    func myMap<T>(_ transform: (Iterator.Element) throws -> T) rethrows -> [T] {
+        var resultCollection = [T]()
+        for element in self {
+            resultCollection.append(try transform(element))
+        }
+        return resultCollection
+    }
+}
+
 struct CollectionChallenges {
     // Challenge 37: Count the numbers
     func challenge37(input: [Int], countOf digit: Character) -> Int {
@@ -140,7 +151,13 @@ struct CollectionChallenges {
         tree.root!.traverse(closure: closure)
     }
 
-    // MARK: PLACEHOLDER for challenges 46 - 53
+    // Challenge 46: Recreate map()
+    func challenge46() {
+        assert([1, 2, 3].myMap({ String($0) }) == ["1", "2", "3"])
+        assert(["1", "2", "3"].myMap({ Int($0) }) == [1, 2, 3])
+    }
+
+    // MARK: PLACEHOLDER for challenges 47 - 53
 
     // Challenge 54: Binary search trees
     func challenge54<T: Comparable>(input: [T]) -> Bool {

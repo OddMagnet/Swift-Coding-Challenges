@@ -328,7 +328,13 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(sum == 6, "Challenge 45 failed")
     }
 
-    // MARK: PLACEHOLDER for challenge 46 - 53 tests
+    func testChallenge46() {
+        col.challenge46()
+//        XCTAssert([1, 2, 3].myMap({ String($0) }) == ["1", "2", "3"], "Challenge 46 failed")
+//        XCTAssert(["1", "2", "3"].myMap({ Int($0) }) == [1, 2, 3], "Challenge 46 failed")
+    }
+
+    // MARK: PLACEHOLDER for challenge 47 - 53 tests
 
     func testChallenge54() {
         // Balanced
