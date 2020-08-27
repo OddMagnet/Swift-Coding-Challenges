@@ -22,6 +22,7 @@ struct Deque<T> {
     }
 
     mutating func popFront() -> T? {
+        guard count > 0 else { return nil }
         return array.removeFirst()
     }
 
