@@ -96,9 +96,7 @@ extension Collection {
 // MARK: Challenge 47 extension
 extension Collection where Iterator.Element: Comparable {
     func myMin() -> Iterator.Element? {
-        guard count > 0 else { return nil }
-        let temp = sorted()
-        return temp[0]
+        return self.sorted().first
     }
 }
 
