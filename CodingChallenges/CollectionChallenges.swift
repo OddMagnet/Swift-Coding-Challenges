@@ -93,6 +93,15 @@ extension Collection {
     }
 }
 
+// MARK: Challenge 47 extension
+extension Collection where Iterator.Element: Comparable {
+    func myMin() -> Iterator.Element? {
+        guard count > 0 else { return nil }
+        let temp = sorted()
+        return temp[0]
+    }
+}
+
 struct CollectionChallenges {
     // Challenge 37: Count the numbers
     func challenge37(input: [Int], countOf digit: Character) -> Int {
@@ -157,7 +166,12 @@ struct CollectionChallenges {
         assert(["1", "2", "3"].myMap({ Int($0) }) == [1, 2, 3])
     }
 
-    // MARK: PLACEHOLDER for challenges 47 - 53
+    // Challenge 47: Recreate min()
+    func challenge47<T: Comparable>(input: [T]) -> T? {
+        return input.myMin()
+    }
+
+    // MARK: PLACEHOLDER for challenges 48 - 53
 
     // Challenge 54: Binary search trees
     func challenge54<T: Comparable>(input: [T]) -> Bool {
