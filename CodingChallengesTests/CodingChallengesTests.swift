@@ -377,7 +377,30 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(col.challenge52(input: Array<Float>([1.0, 2.0, 3.0])) == 6.0, "Challenge 52 failed")
     }
 
-    // MARK: PLACEHOLDER for challenge 53 tests
+    func testChallenge53() {
+        let list = LinkedList<UInt32>()
+        var previousNode: LinkedListNode<UInt32>? = nil
+        var linkBackNode: LinkedListNode<UInt32>? = nil
+        let linkBackPoint = Int(arc4random_uniform(1000))
+
+        for i in 1...1000 {
+            let node = LinkedListNode(value: arc4random())
+
+            if i == linkBackPoint { linkBackNode = node }
+
+            if let predecessor = previousNode {
+                predecessor.next = node
+            } else {
+                list.head = node
+            }
+
+            previousNode = node
+        }
+
+        previousNode?.next = linkBackNode
+
+        XCTAssert(col.challenge53(input: list) === linkBackNode, "Challenge 53 failed")
+    }
 
     func testChallenge54() {
         // Balanced

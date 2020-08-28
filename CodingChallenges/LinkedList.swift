@@ -20,6 +20,9 @@ class LinkedListNode<T> {
 class LinkedList<T> {
     var head: LinkedListNode<T>?
 
+    init() {
+    }
+
     init(with content: [T]) {
         guard content.count != 0 else { return }
         var prevNode: LinkedListNode<T>? = nil
@@ -75,5 +78,41 @@ class LinkedList<T> {
         allNodes.reverse()
         let reversedList = LinkedList(with: allNodes)
         return reversedList
+    }
+
+    // MARK: Challenge 53
+    func findLoopStart() -> LinkedListNode<T>? {
+        // Using Floyd’s cycle-finding algorithm, best explained with the tortoise and hare analogy
+        var tortoise = head
+        var hare = head
+
+        // move until both meet, that means they are in the loop
+        while hare != nil && hare?.next != nil {
+            tortoise = tortoise?.next
+            hare = hare?.next?.next
+
+            // once both meet, the loop is found
+            if tortoise === hare {
+                break
+            }
+        }
+
+        // if hare went past the last node, then there is no loop
+        guard hare != nil || hare?.next != nil else { return nil }
+
+        // reset the tortoise back to the start
+        tortoise = head
+
+        // the next time they meet is the start of the loop
+        // force unwrap since we know they'll always have a value in the loop
+        while tortoise! !== hare! {
+            // now they move at the same speed
+            tortoise = tortoise?.next
+            hare = hare?.next
+        }
+
+        // since they meet at the start of the loop and the above while ends when they meet
+        // we can now simply return their position
+        return tortoise
     }
 }

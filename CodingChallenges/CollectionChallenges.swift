@@ -229,7 +229,10 @@ struct CollectionChallenges {
         return input.reduce(0, +)
     }
 
-    // MARK: PLACEHOLDER for challenges 53
+    // Challenge 53: Linked lists with a loop
+    func challenge53<T>(input: LinkedList<T>) -> LinkedListNode<T>? {
+        return input.findLoopStart()
+    }
 
     // Challenge 54: Binary search trees
     func challenge54<T: Comparable>(input: [T]) -> Bool {
