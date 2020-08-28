@@ -176,9 +176,9 @@ struct CollectionChallenges {
     func challenge49(_ input: Int...) -> Int {
         let countedSet = NSCountedSet(array: input)
         var sum = 0
-        for item in countedSet {
+        for case let item as Int in countedSet {
             if countedSet.count(for: item) % 2 == 0 {
-                sum += item as! Int
+                sum += item
             }
         }
         return sum
