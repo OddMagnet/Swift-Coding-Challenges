@@ -218,7 +218,13 @@ struct CollectionChallenges {
         return bestRange
     }
 
-    // MARK: PLACEHOLDER for challenges 51 - 53
+    // Challenge 51: Reversing linked lists
+    func challenge51(input: String) -> String {
+        let linkedList = LinkedList<Character>(with: Array<Character>(input))
+        return linkedList.reversed().allNodesValuesString
+    }
+
+    // MARK: PLACEHOLDER for challenges 52 - 53
 
     // Challenge 54: Binary search trees
     func challenge54<T: Comparable>(input: [T]) -> Bool {

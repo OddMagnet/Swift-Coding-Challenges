@@ -68,4 +68,12 @@ class LinkedList<T> {
 
         return midPointer?.value
     }
+
+    // MARK: Challenge 51
+    func reversed() -> LinkedList<T> {
+        var allNodes = self.allNodeValues()
+        allNodes.reverse()
+        let reversedList = LinkedList(with: allNodes)
+        return reversedList
+    }
 }
