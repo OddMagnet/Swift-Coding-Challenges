@@ -187,48 +187,35 @@ struct CollectionChallenges {
     // Challenge 50: Count the largest range
     // Write a function that accepts an array of positive and negative numbers and returns a closed range
     // containing the position of the contiguous positive numbers that sum to the highest value, or nil if nothing were found.
-    func challenge50(input: [Int]) -> ClosedRange<Int>? {
-        guard !input.isEmpty else { return nil }
+    func challenge50(input: [Int]) -> CountableClosedRange<Int>? {
         var currentStart: Int? = nil
-        var current = 0
+        var currentSum = 0
 
-        var rangeStart = 0
-        var rangeEnd = 0
+        var bestRange: CountableClosedRange<Int>? = nil
         var highest = 0
 
         // go over every element
         for (index, element) in input.enumerated() {
             // check if it's positive
             if element > 0 {
-                // set currentStart if it's nil
-                if currentStart == nil { currentStart = index }
-                // and add the current element
-                current += element
+                // set currentStart if it's nil and add the current element
+                currentStart = currentStart ?? index
+                currentSum += element
+
+                if currentSum > highest {
+                    // Update the best range and highest
+                    highest = currentSum
+                    bestRange = currentStart! ... index
+                }
             // once a non-positive element is found
             } else {
-                // check if the current is higher than the highest so far
-                if current > highest {
-                    // if so, assign it to highest and set the ranges
-                    highest = current
-                    rangeEnd = index - 1
-                    rangeStart = currentStart ?? 0
-                }
-                // either way current and currentStart need to be reset on a negative element
-                current = 0
+                // reset currentSum and currentStart
+                currentSum = 0
                 currentStart = nil
             }
         }
 
-        // after all elements were checked, see if the current is higher than the highest
-        // this happens if the range goes to the last element of the input
-        if current > highest {
-            // if that's the case, set the rangeStart to the last currentStart and the rangeEnd to the end of the array
-            guard let start = currentStart else { return nil }
-            rangeStart = start
-            rangeEnd = input.count - 1
-        }
-
-        return rangeStart...rangeEnd
+        return bestRange
     }
 
     // MARK: PLACEHOLDER for challenges 51 - 53
