@@ -353,7 +353,18 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(numbers.popBack() == nil, "Challenge 48 failed")
     }
 
-    // MARK: PLACEHOLDER for challenge 49 - 53 tests
+    func testChallenge49() {
+        XCTAssert(col.challenge49(1, 2, 2, 3, 3, 4) == 5, "Challenge 49 failed")
+        XCTAssert(col.challenge49(5, 5, 5, 12, 12) == 12, "Challenge 49 failed")
+        XCTAssert(col.challenge49(1, 1, 2, 2, 3, 3, 4, 4) == 10, "Challenge 49 failed")
+        /*
+         • The code challenge49(1, 2, 2, 3, 3, 4) should return 5, because the numbers 2 and 3 appear twice each.
+         • The code challenge49(5, 5, 5, 12, 12) should return 12, because that’s the only number that appears an even number of times.
+         • The code challenge49(1, 1, 2, 2, 3, 3, 4, 4) should return 10.
+         */
+    }
+
+    // MARK: PLACEHOLDER for challenge 50 - 53 tests
 
     func testChallenge54() {
         // Balanced

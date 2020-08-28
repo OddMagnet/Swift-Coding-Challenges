@@ -172,7 +172,19 @@ struct CollectionChallenges {
     // Challenge 48: Implement a deque data structure
     // See: DoubleEndedQueue.swift
 
-    // MARK: PLACEHOLDER for challenges 49 - 53
+    // Challenge 49: Sum the even repeats
+    func challenge49(_ input: Int...) -> Int {
+        let countedSet = NSCountedSet(array: input)
+        var sum = 0
+        for item in countedSet {
+            if countedSet.count(for: item) % 2 == 0 {
+                sum += item as! Int
+            }
+        }
+        return sum
+    }
+
+    // MARK: PLACEHOLDER for challenges 50 - 53
 
     // Challenge 54: Binary search trees
     func challenge54<T: Comparable>(input: [T]) -> Bool {
