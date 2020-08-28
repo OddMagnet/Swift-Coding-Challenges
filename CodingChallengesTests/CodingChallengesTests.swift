@@ -359,7 +359,15 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(col.challenge49(1, 1, 2, 2, 3, 3, 4, 4) == 10, "Challenge 49 failed")
     }
 
-    // MARK: PLACEHOLDER for challenge 50 - 53 tests
+    func testChallenge50() {
+        XCTAssert(col.challenge50(input: [0, 1, 1, -1, 2, 3, 1]) == 4...6, "Challenge 50 failed")
+        XCTAssert(col.challenge50(input: [10, 20, 30, -10, -20, 10, 20]) == 0...2, "Challenge 50 failed")
+        XCTAssert(col.challenge50(input: [1, -1, 2, -1]) == 2...2, "Challenge 50 failed")
+        XCTAssert(col.challenge50(input: [2, 0, 2, 0, 2]) == 0...0, "Challenge 50 failed")
+        XCTAssert(col.challenge50(input: [Int]()) == nil, "Challenge 50 failed")
+    }
+
+    // MARK: PLACEHOLDER for challenge 51 - 53 tests
 
     func testChallenge54() {
         // Balanced

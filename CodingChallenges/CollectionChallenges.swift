@@ -184,7 +184,54 @@ struct CollectionChallenges {
         return sum
     }
 
-    // MARK: PLACEHOLDER for challenges 50 - 53
+    // Challenge 50: Count the largest range
+    // Write a function that accepts an array of positive and negative numbers and returns a closed range
+    // containing the position of the contiguous positive numbers that sum to the highest value, or nil if nothing were found.
+    func challenge50(input: [Int]) -> ClosedRange<Int>? {
+        guard !input.isEmpty else { return nil }
+        var currentStart: Int? = nil
+        var current = 0
+
+        var rangeStart = 0
+        var rangeEnd = 0
+        var highest = 0
+
+        // go over every element
+        for (index, element) in input.enumerated() {
+            // check if it's positive
+            if element > 0 {
+                // set currentStart if it's nil
+                if currentStart == nil { currentStart = index }
+                // and add the current element
+                current += element
+            // once a non-positive element is found
+            } else {
+                // check if the current is higher than the highest so far
+                if current > highest {
+                    // if so, assign it to highest and set the ranges
+                    highest = current
+                    rangeEnd = index - 1
+                    rangeStart = currentStart ?? 0
+                }
+                // either way current and currentStart need to be reset on a negative element
+                current = 0
+                currentStart = nil
+            }
+        }
+
+        // after all elements were checked, see if the current is higher than the highest
+        // this happens if the range goes to the last element of the input
+        if current > highest {
+            // if that's the case, set the rangeStart to the last currentStart and the rangeEnd to the end of the array
+            guard let start = currentStart else { return nil }
+            rangeStart = start
+            rangeEnd = input.count - 1
+        }
+
+        return rangeStart...rangeEnd
+    }
+
+    // MARK: PLACEHOLDER for challenges 51 - 53
 
     // Challenge 54: Binary search trees
     func challenge54<T: Comparable>(input: [T]) -> Bool {
