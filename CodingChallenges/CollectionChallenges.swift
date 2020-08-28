@@ -224,7 +224,12 @@ struct CollectionChallenges {
         return linkedList.reversed().allNodesValuesString
     }
 
-    // MARK: PLACEHOLDER for challenges 52 - 53
+    // Challenge 52: Sum an array of numbers
+    func challenge52<T: Numeric>(input: [T]) -> T {
+        return input.reduce(0, +)
+    }
+
+    // MARK: PLACEHOLDER for challenges 53
 
     // Challenge 54: Binary search trees
     func challenge54<T: Comparable>(input: [T]) -> Bool {

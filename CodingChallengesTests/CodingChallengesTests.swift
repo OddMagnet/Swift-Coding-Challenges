@@ -371,7 +371,13 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(col.challenge51(input: "abcdefghijklmnopqrstuvwxyz") == "z y x w v u t s r q p o n m l k j i h g f e d c b a", "Challenge 43 failed")
     }
 
-    // MARK: PLACEHOLDER for challenge 52 - 53 tests
+    func testChallenge52() {
+        XCTAssert(col.challenge52(input: [1, 2, 3]) == 6, "Challenge 52 failed")
+        XCTAssert(col.challenge52(input: [1.0, 2.0, 3.0]) == Double(6.0), "Challenge 52 failed")
+        XCTAssert(col.challenge52(input: Array<Float>([1.0, 2.0, 3.0])) == 6.0, "Challenge 52 failed")
+    }
+
+    // MARK: PLACEHOLDER for challenge 53 tests
 
     func testChallenge54() {
         // Balanced
