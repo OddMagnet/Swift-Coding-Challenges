@@ -8,9 +8,9 @@
 
 import Foundation
 
-// MARK: Challenge 55 extension
+// MARK: Challenge 55, 56 extension
 extension Array where Element: Comparable {
-    func myBubbleSort() -> [Element] {
+    func bubbleSort() -> [Element] {
         // no need to sort arrays with 1 or less items
         guard self.count > 1 else { return self }
 
@@ -38,12 +38,47 @@ extension Array where Element: Comparable {
 
         return array
     }
+
+    func insertionSort() -> [Element] {
+        // no need to sort arrays with 1 or less items
+        guard self.count > 1 else { return self }
+
+        var array = self
+
+        for i in 1 ..< count {
+            // second index for moving back
+            var currentIndex = i
+
+            // copy of the item that is currently being sorted
+            let currentItem = array[currentIndex]
+
+            // move back in the array until the current item is smaller, or the start of the array is reached
+            while currentIndex > 0 && currentItem < array[currentIndex - 1] {
+                // with every step back, move the bigger item to the right
+                array[currentIndex] = array[currentIndex - 1]
+                // and reduce the current index further for the next step
+                currentIndex -= 1
+            }
+
+            // after the last step back, either due to the item not being smaller anymore, or the start of the array being reached
+            // place the item in its sorted placed
+            array[currentIndex] = currentItem
+            print("Loop #\(i)")
+        }
+
+        return array
+    }
 }
 
 struct AlgorithmChallenges {
     // Challenge 55: Bubble sort
     func challenge55<T: Comparable>(input: [T]) -> [T] {
-        return input.myBubbleSort()
+        return input.bubbleSort()
+    }
+
+    // Challenge 56: Insertion sort
+    func challenge56<T: Comparable>(input: [T]) -> [T] {
+        return input.insertionSort()
     }
     
 }
