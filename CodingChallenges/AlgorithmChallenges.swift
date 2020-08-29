@@ -63,7 +63,6 @@ extension Array where Element: Comparable {
             // after the last step back, either due to the item not being smaller anymore, or the start of the array being reached
             // place the item in its sorted placed
             array[currentIndex] = currentItem
-            print("Loop #\(i)")
         }
 
         return array
