@@ -14,6 +14,7 @@ class CodingChallengesTests: XCTestCase {
     var num = NumberChallenges()
     var file = FileChallenges()
     var col = CollectionChallenges()
+    var algo = AlgorithmChallenges()
 
     // MARK: String Challenges -
     func testChallenge1() {
@@ -418,4 +419,8 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(col.challenge54(input: [10, 5, 4, 3, 2, 1, 11, 12, 13, 14, 15]) == false, "Challenge 54 failed")
         XCTAssert(col.challenge54(input: ["f", "d", "c", "e", "a", "b"]) == false, "Challenge 54 failed")
     }
+
+    // MARK: Algorithm Challenges
+
+    
 }

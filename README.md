@@ -61,3 +61,15 @@
 52. Sum an array of numbers
 53. Linked lists with a loop
 54. Binary search trees
+
+## Algorithm Challenges
+55. Bubble sort
+56. Insertion Sort
+57. Isomorphic Values
+58. Balanced Brackets
+59. Quicksort
+60. Tic-Tac-Toe Winner
+61. Find prime numbers
+62. Points to angles
+63. Flood Fill
+64. N Queens
