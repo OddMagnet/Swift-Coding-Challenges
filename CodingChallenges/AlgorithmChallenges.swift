@@ -168,25 +168,19 @@ struct AlgorithmChallenges {
 
     // Challenge 60: Tic-Tac-Toe winner
     func challenge60(input: [[String]]) -> Bool {
+        func isWin(_ a: String, _ b: String, _ c: String) -> Bool {
+            guard a != "" else { return false }
+            return a == b && b == c
+        }
 
         // check columns and rows
         for index in 0...2 {
-            if input[index][0] == input[index][1]
-                && input[index][1] == input[index][2]
-                && input[index][2] != "" { return true}
-            if input[0][index] == input[1][index]
-                && input[1][index] == input[2][index]
-                && input[2][index] != "" { return true}
+            if isWin(input[index][0], input[index][1], input[index][2]) { return true } // rows
+            if isWin(input[0][index], input[1][index], input[2][index]) { return true } // columns
         }
 
-        // check diagonal
-        if input[0][0] == input[1][1]
-            && input[1][1] == input[2][2]
-            && input[2][2] != "" { return true}
-        if input[0][2] == input[1][1]
-            && input[1][1] == input[2][0]
-            && input[2][0] != "" { return true}
-
-        return false
+        // check diagonal options, return true if either one is true, false otherwise
+        return isWin(input[0][0], input[1][1], input[2][2]) // top left to bottom right
+            || isWin(input[0][2], input[1][1], input[2][0]) // top right to bottom left
     }
 }
