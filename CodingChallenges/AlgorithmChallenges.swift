@@ -79,5 +79,36 @@ struct AlgorithmChallenges {
     func challenge56<T: Comparable>(input: [T]) -> [T] {
         return input.insertionSort()
     }
+
+    // Challenge 57: Isomorphic values
+    func challenge57(inputA: Any, inputB: Any) -> Bool {
+        // convert both inputs to an array of characters
+        let arrayA = Array(String(describing: inputA))
+        let arrayB = Array(String(describing: inputB))
+        // they can only be isomorphic if they're the same length
+        guard arrayA.count == arrayB.count else { return false }
+
+        // track mapped characters
+        var characterMap = [Character: Character]()
+
+        // loop over all characters, checking mappings for each and creating them if necessary
+        // as soon as either characterA or characterB is mapped with 2 different characters, return false
+        for (index, characterA) in arrayA.enumerated() {
+            let characterB = arrayB[index]
+
+            // if there is already a mapping for characterA, check it against characterB
+            if let mapping = characterMap[characterA] {
+                if mapping != characterB { return false }
+            } else {
+                // if not, check if the map contains characterB already
+                if characterMap.values.contains(characterB) { return false }
+                // if not, create it
+                characterMap[characterA] = characterB
+            }
+        }
+
+        // if the whole loop ran through without returning false, then the inputs are isomorphic
+        return true
+    }
     
 }
