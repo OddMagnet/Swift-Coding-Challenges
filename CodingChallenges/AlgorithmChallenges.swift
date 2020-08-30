@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: Challenge 55, 56 extension
+// MARK: Challenge 55, 56 & 59 extension
 extension Array where Element: Comparable {
     func bubbleSort() -> [Element] {
         // no need to sort arrays with 1 or less items
@@ -66,6 +66,17 @@ extension Array where Element: Comparable {
         }
 
         return array
+    }
+
+    func quickSort() -> [Element] {
+        guard count > 1 else { return self }
+
+        let midPoint = self[count / 2]
+        let smaller = filter { $0 < midPoint }
+        let bigger = filter { $0 > midPoint }
+        let equal = filter { $0 == midPoint }
+
+        return smaller.quickSort() + equal + bigger.quickSort()
     }
 }
 
@@ -148,5 +159,10 @@ struct AlgorithmChallenges {
         // if the loop ran over all brackets and didn't return false
         // and the bracketArray count is now 0, then the input had balanced brackets
         return bracketArray.count == 0
+    }
+
+    // Challenge 59: Quicksort
+    func challenge59<T: Comparable>(input: [T]) -> [T] {
+        return input.quickSort()
     }
 }

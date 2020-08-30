@@ -451,5 +451,11 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(algo.challenge58(input: "[<<<{}>>]") == false, "Challenge 58 failed")
         XCTAssert(algo.challenge58(input: "hellO") == false, "Challenge 58 failed")
     }
+
+    func testChallenge59() {
+        XCTAssert(algo.challenge59(input: [12, 5, 4, 9, 3, 2, 1]) == [1, 2, 3, 4, 5, 9, 12], "Challenge 59 failed")
+        XCTAssert(algo.challenge59(input: ["f", "a", "b"]) == ["a", "b", "f"], "Challenge 59 failed")
+        XCTAssert(algo.challenge59(input: [String]()) == [], "Challenge 59 failed")
+    }
     
 }
