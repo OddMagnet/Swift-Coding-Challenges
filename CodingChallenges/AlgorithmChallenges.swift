@@ -165,4 +165,28 @@ struct AlgorithmChallenges {
     func challenge59<T: Comparable>(input: [T]) -> [T] {
         return input.quickSort()
     }
+
+    // Challenge 60: Tic-Tac-Toe winner
+    func challenge60(input: [[String]]) -> Bool {
+
+        // check columns and rows
+        for index in 0...2 {
+            if input[index][0] == input[index][1]
+                && input[index][1] == input[index][2]
+                && input[index][2] != "" { return true}
+            if input[0][index] == input[1][index]
+                && input[1][index] == input[2][index]
+                && input[2][index] != "" { return true}
+        }
+
+        // check diagonal
+        if input[0][0] == input[1][1]
+            && input[1][1] == input[2][2]
+            && input[2][2] != "" { return true}
+        if input[0][2] == input[1][1]
+            && input[1][1] == input[2][0]
+            && input[2][0] != "" { return true}
+
+        return false
+    }
 }

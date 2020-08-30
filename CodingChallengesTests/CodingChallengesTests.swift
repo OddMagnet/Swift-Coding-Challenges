@@ -457,5 +457,21 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(algo.challenge59(input: ["f", "a", "b"]) == ["a", "b", "f"], "Challenge 59 failed")
         XCTAssert(algo.challenge59(input: [String]()) == [], "Challenge 59 failed")
     }
+
+    func testChallenge60() {
+        XCTAssert(algo.challenge60(input: [["X", "", "O"], ["", "X", "O"], ["", "", "X"]]) == true, "Challenge 60 failed")
+        XCTAssert(algo.challenge60(input: [["X", "", "O"], ["X", "", "O"], ["X", "", ""]]) == true, "Challenge 60 failed")
+        XCTAssert(algo.challenge60(input: [["", "X", ""], ["O", "X", ""], ["O", "X", ""]]) == true, "Challenge 60 failed")
+        XCTAssert(algo.challenge60(input: [["", "X", ""], ["O", "X", ""], ["O", "", "X"]]) == false, "Challenge 60 failed")
+        XCTAssert(algo.challenge60(input: [["", "", ""], ["", "", ""], ["", "", ""]]) == false, "Challenge 60 failed")
+
+        /*
+         • The array [["X", "", "O"], ["", "X", "O"], ["", "", "X"]] should return true.
+         • The array [["X", "", "O"], ["X", "", "O"], ["X", "", ""]] should return true.
+         • The array [["", "X", ""], ["O", "X", ""], ["O", "X", ""]] should return true.
+         • The array [["", "X", ""], ["O", "X", ""], ["O", "", "X"]] should return false.
+         • The array [["", "", ""], ["", "", ""], ["", "", ""]] should return false.
+         */
+    }
     
 }
