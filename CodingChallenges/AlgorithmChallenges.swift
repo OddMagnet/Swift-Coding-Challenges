@@ -110,5 +110,43 @@ struct AlgorithmChallenges {
         // if the whole loop ran through without returning false, then the inputs are isomorphic
         return true
     }
-    
+
+    // Challenge 58: Balanced brackets
+    func challenge58(input: String) -> Bool {
+        // create a character set containing all non-valid characters
+        let invalidCharacters = CharacterSet(charactersIn: "<{[()]}>").inverted
+        // check that the input only contains valid characters
+        guard input.rangeOfCharacter(from: invalidCharacters) == nil else { return false }
+
+        // using an array with append() and popLast() to get the same functionality as with a stack
+        var bracketArray = [Character]()
+        // map opening to closing brackets
+        let bracketMap: [Character: Character] = [
+            "<": ">",
+            "{": "}",
+            "[": "]",
+            "(": ")"
+        ]
+
+        for bracket in input {
+            // check if it's an opening bracket, if so append it to the array
+            if bracketMap.keys.contains(bracket) {
+                bracketArray.append(bracket)
+            } else {
+            // otherwise it must be a closing bracket
+                // check the last bracket in the array
+                if let lastBracket = bracketArray.popLast() {
+                    // if there is one, check if it's a fitting opening bracket, return false if not
+                    if bracketMap[lastBracket] != bracket { return false }
+                } else {
+                    // if there is none, then the input can't be balanced brackets
+                    return false
+                }
+            }
+        }
+
+        // if the loop ran over all brackets and didn't return false
+        // and the bracketArray count is now 0, then the input had balanced brackets
+        return bracketArray.count == 0
+    }
 }
