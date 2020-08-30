@@ -183,4 +183,40 @@ struct AlgorithmChallenges {
         return isWin(input[0][0], input[1][1], input[2][2]) // top left to bottom right
             || isWin(input[0][2], input[1][1], input[2][0]) // top right to bottom left
     }
+
+    // Challenge 61: Find prime numbers
+    // Using the Sieve of Eratosthenes algorithm (https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+    /* Pesudo code from wikipedia:
+     algorithm Sieve of Eratosthenes is
+         input: an integer n > 1.
+         output: all prime numbers from 2 through n.
+
+         let A be an array of Boolean values, indexed by integers 2 to n, initially all set to true.
+
+         for i = 2, 3, 4, ..., not exceeding √n do
+            if A[i] is true
+                for j = i2, i2+i, i2+2i, i2+3i, ..., not exceeding n do
+                    A[j] := false
+
+         return all i such that A[i] is true.
+     */
+    func challenge61(max: Int) -> [Int] {
+        var isPrime = [Bool](repeating: true, count: max)
+        // challenge asks to exclude 0 and 1
+        isPrime[0] = false; isPrime[1] = false
+
+        for number in 2 ..< max {
+            if isPrime[number] == true {
+                for multipleOfNumber in stride(from: number * number, to: isPrime.count, by: number) {
+                    // a multiple of a prime number can't be a prime
+                    isPrime[multipleOfNumber] = false
+                }
+            }
+        }
+
+        // $0 is the index, $1 the value
+        // in this case the value is a boolean, indicating if the number, which equals the index
+        // is a prime, if so it is added to the return array
+        return isPrime.enumerated().compactMap({ $1 == true ? $0 : nil })
+    }
 }

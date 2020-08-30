@@ -465,5 +465,11 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(algo.challenge60(input: [["", "X", ""], ["O", "X", ""], ["O", "", "X"]]) == false, "Challenge 60 failed")
         XCTAssert(algo.challenge60(input: [["", "", ""], ["", "", ""], ["", "", ""]]) == false, "Challenge 60 failed")
     }
+
+    func testChallenge61() {
+        XCTAssert(algo.challenge61(max: 10) == [2, 3, 5, 7], "Challenge 61 failed")
+        XCTAssert(algo.challenge61(max: 11) == [2, 3, 5, 7], "Challenge 61 failed")
+        XCTAssert(algo.challenge61(max: 12) == [2, 3, 5, 7, 11], "Challenge 61 failed")
+    }
     
 }
