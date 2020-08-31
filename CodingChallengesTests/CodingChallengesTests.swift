@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import GameplayKit
 @testable import CodingChallenges
 
 class CodingChallengesTests: XCTestCase {
@@ -483,6 +484,44 @@ class CodingChallengesTests: XCTestCase {
         points.append((pointA: CGPoint.zero, pointB: CGPoint(x: -100,    y: 0    )))
         points.append((pointA: CGPoint.zero, pointB: CGPoint(x: -100,    y: -100 )))
         XCTAssert(algo.challenge62(input: points) == [0.0, 45.0, 90.0, 135.0, 180.0, 225.0, 270.0, 315.0], "Challenge 62 failed")
+    }
+
+    func testChallenge63() {
+        // setting up
+        let random = GKMersenneTwisterRandomSource(seed: 1)
+        var grid = (1...10).map { _ in
+            (1...10).map { _ in
+                Int(random.nextInt(upperBound: 2))
+            }
+        }
+        let startGrid = [
+            [0, 0, 0, 0, 0, 1, 0, 0, 1, 1],
+            [0, 1, 1, 0, 0, 0, 0, 1, 0, 0],
+            [0, 1, 0, 0, 0, 0, 0, 0, 1, 1],
+            [1, 0, 1, 0, 0, 1, 1, 0, 0, 0],
+            [1, 0, 1, 0, 1, 1, 1, 1, 1, 0],
+            [1, 0, 1, 1, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 1, 1, 1, 0, 1, 1],
+            [1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
+            [1, 1, 0, 1, 1, 1, 1, 0, 0, 0],
+            [0, 1, 1, 0, 0, 1, 0, 1, 1, 1]
+        ]
+        let endGrit = [
+            [5, 5, 5, 5, 5, 1, 5, 5, 1, 1],
+            [5, 1, 1, 5, 5, 5, 5, 1, 0, 0],
+            [5, 1, 5, 5, 5, 5, 5, 5, 1, 1],
+            [1, 0, 1, 5, 5, 1, 1, 5, 5, 5],
+            [1, 0, 1, 5, 1, 1, 1, 1, 1, 5],
+            [1, 0, 1, 1, 5, 5, 5, 5, 5, 5],
+            [0, 0, 0, 0, 1, 1, 1, 5, 1, 1],
+            [1, 1, 1, 0, 0, 1, 1, 1, 1, 1],
+            [1, 1, 0, 1, 1, 1, 1, 0, 0, 0],
+            [0, 1, 1, 0, 0, 1, 0, 1, 1, 1]
+        ]
+        // making sure the grid generation was correct
+        XCTAssert(grid == startGrid, "Grid Generation failed")
+        algo.challenge63(grid: &grid, fillValue: 5, startPoint: (x: 2, y: 0))
+        XCTAssert(grid == endGrit, "Challenge 63 failed")
     }
     
 }

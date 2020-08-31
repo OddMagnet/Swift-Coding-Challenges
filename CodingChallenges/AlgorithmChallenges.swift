@@ -239,4 +239,27 @@ struct AlgorithmChallenges {
                 : degreesCorrected + 360.0
         }
     }
+
+    // Challenge 63: Flood fill
+//  func challenge63(grid: inout [[Int]], newNumber: Int, replacing: Int? = nil   , point: (x: Int, y: Int), ) {
+    func challenge63(grid: inout [[Int]], fillValue: Int, replaceValue: Int? = nil, startPoint: (x: Int, y: Int)) {
+        // make sure the starting point is valid
+        guard (0 ..< 10).contains(startPoint.x) else { return }
+        guard (0 ..< 10).contains(startPoint.y) else { return }
+
+        // on recursive calls this value will be set, on the first call it's the value at the startPoint
+        let valueToReplace = replaceValue ?? grid[startPoint.y][startPoint.x]
+
+        // check the current point
+        if grid[startPoint.y][startPoint.x] == valueToReplace {
+            // fill it with the new value
+            grid[startPoint.y][startPoint.x] = fillValue
+
+            // then fill the surrounding points
+            challenge63(grid: &grid, fillValue: fillValue, replaceValue: valueToReplace, startPoint: (x: startPoint.x + 1, y: startPoint.y))
+            challenge63(grid: &grid, fillValue: fillValue, replaceValue: valueToReplace, startPoint: (x: startPoint.x - 1, y: startPoint.y))
+            challenge63(grid: &grid, fillValue: fillValue, replaceValue: valueToReplace, startPoint: (x: startPoint.x, y: startPoint.y + 1))
+            challenge63(grid: &grid, fillValue: fillValue, replaceValue: valueToReplace, startPoint: (x: startPoint.x, y: startPoint.y - 1))
+        }
+    }
 }
