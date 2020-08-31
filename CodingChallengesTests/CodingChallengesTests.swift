@@ -471,5 +471,18 @@ class CodingChallengesTests: XCTestCase {
         XCTAssert(algo.challenge61(max: 11) == [2, 3, 5, 7], "Challenge 61 failed")
         XCTAssert(algo.challenge61(max: 12) == [2, 3, 5, 7, 11], "Challenge 61 failed")
     }
+
+    func testChallenge62() {
+        var points = [(pointA: CGPoint, pointB: CGPoint)]()
+        points.append((pointA: CGPoint.zero, pointB: CGPoint(x: 0,       y: -100 )))
+        points.append((pointA: CGPoint.zero, pointB: CGPoint(x: 100,     y: -100 )))
+        points.append((pointA: CGPoint.zero, pointB: CGPoint(x: 100,     y: 0    )))
+        points.append((pointA: CGPoint.zero, pointB: CGPoint(x: 100,     y: 100  )))
+        points.append((pointA: CGPoint.zero, pointB: CGPoint(x: 0,       y: 100  )))
+        points.append((pointA: CGPoint.zero, pointB: CGPoint(x: -100,    y: 100  )))
+        points.append((pointA: CGPoint.zero, pointB: CGPoint(x: -100,    y: 0    )))
+        points.append((pointA: CGPoint.zero, pointB: CGPoint(x: -100,    y: -100 )))
+        XCTAssert(algo.challenge62(input: points) == [0.0, 45.0, 90.0, 135.0, 180.0, 225.0, 270.0, 315.0], "Challenge 62 failed")
+    }
     
 }

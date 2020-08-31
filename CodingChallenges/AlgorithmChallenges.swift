@@ -219,4 +219,24 @@ struct AlgorithmChallenges {
         // is a prime, if so it is added to the return array
         return isPrime.enumerated().compactMap({ $1 == true ? $0 : nil })
     }
+
+    // Challenge 62: Points to angles
+    func challenge62(input: [(pointA: CGPoint, pointB: CGPoint)]) -> [CGFloat] {
+        // Mapping each pair of points to create an array of angles
+        return input.map { pointA, pointB in
+            // calculate deltas for the atan2 function
+            let deltaX = pointA.x - pointB.x
+            let deltaY = pointA.y - pointB.y
+            // calculate the angle in radians
+            let radians = atan2(deltaY, deltaX)
+            // convert to degrees
+            let degrees = radians * 180 / CGFloat.pi
+            // and correct for 0 degrees to lie (as is convention) on the positive X-Axis
+            let degreesCorrected = degrees - 90
+            // make sure to only return positive angles
+            return degreesCorrected >= 0
+                ? degreesCorrected
+                : degreesCorrected + 360.0
+        }
+    }
 }
